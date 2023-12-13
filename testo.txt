@@ -3,3 +3,5 @@ Nome ristorante: Cracco mi fa un baffo
 Tipo di menù: alla carta
 
 Bevande: (acqua, vino rosso, Coca Cola, caffè, succo)
+
+Primo piatti: (fettuccine al ragù, carbonara, pasta al pesto,)
