@@ -4,6 +4,13 @@ Tipo di menù: carne
 
 Bevande: (acqua, vino rosso, Coca Cola, caffè, succo)
 
+Primi piatti {
+-pasta al pesto
+-carbonara
+-fettucine al ragu
+}
+
+
 Secondi piatti{
 -tagliata
 -grigliata mista
