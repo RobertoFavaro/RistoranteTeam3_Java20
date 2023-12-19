@@ -16,3 +16,9 @@ Secondi piatti{
 -grigliata mista
 -hamburger
 }
+
+Dessert {
+-panna cotta
+-parfait di mandorle
+-cannolo
+}
