@@ -1,6 +1,6 @@
 package src;
 
-public class SecondiPiatti {
+public class SecondiPiatti extends Portata{
     private String nome;
     private String descrizione;
     private String ingredienti;
