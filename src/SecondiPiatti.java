@@ -45,4 +45,13 @@ public class SecondiPiatti extends Portata{
     public void setIngredienti(String ingredienti) {
         this.ingredienti = ingredienti;
     }
+
+    @Override
+    public void stampaPortate() {
+        super.stampaPortate();
+        System.out.print(getNome()+"    ");
+        System.out.print(getDescrizione()+ "    ");
+        System.out.print(getIngredienti()+"   ");
+        System.out.println(getPrezzo());
+    }
 }

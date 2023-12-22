@@ -2,10 +2,14 @@ package src;
 
 public class Dessert extends Portata{
     private String nome;
+    private String descrizione;
+    private String ingredienti;
     private double prezzo;
 
-    public Dessert(String nome, double prezzo) {
+    public Dessert(String nome, String descrizione, String ingredienti, double prezzo) {
         this.nome = nome;
+        this.descrizione = descrizione;
+        this.ingredienti = ingredienti;
         this.prezzo = prezzo;
     }
 
@@ -17,6 +21,22 @@ public class Dessert extends Portata{
         this.nome = nome;
     }
 
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
+    public String getIngredienti() {
+        return ingredienti;
+    }
+
+    public void setIngredienti(String ingredienti) {
+        this.ingredienti = ingredienti;
+    }
+
     public double getPrezzo() {
         return prezzo;
     }
@@ -25,13 +45,13 @@ public class Dessert extends Portata{
         this.prezzo = prezzo;
     }
 
+
     @Override
-    public String toString() {
-        return "Dessert{" +
-                "nome='" + nome + '\'' +
-                ", prezzo=" + prezzo +
-                '}';
+    public void stampaPortate() {
+        super.stampaPortate();
+        System.out.print(getNome()+"    ");
+        System.out.print(getDescrizione()+ "    ");
+        System.out.print(getIngredienti()+"   ");
+        System.out.println(getPrezzo());
     }
-
-
 }

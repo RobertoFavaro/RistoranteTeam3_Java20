@@ -24,8 +24,15 @@ public class Bevande extends Portata{
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
-    public void stampaElementiDellaPortata(){
+
+    @Override
+    public void stampaPortate() {
+        super.stampaPortate();
         System.out.print(getNome()+"     ");
         System.out.println(getPrezzo());
     }
+    //    public void stampaElementiDellaPortata(){
+//        System.out.print(getNome()+"     ");
+//        System.out.println(getPrezzo());
+//    }
 }

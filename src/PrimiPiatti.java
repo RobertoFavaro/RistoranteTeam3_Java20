@@ -44,4 +44,13 @@ public class PrimiPiatti extends Portata{
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
+
+    @Override
+    public void stampaPortate() {
+        super.stampaPortate();
+        System.out.print(getNome()+"    ");
+        System.out.print(getDescrizione()+ "    ");
+        System.out.print(getIngredienti()+"   ");
+        System.out.println(getPrezzo());
+    }
 }
