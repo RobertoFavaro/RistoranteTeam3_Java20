@@ -1,6 +1,5 @@
 package src;
 
-public class Portata {
-    public void stampaPortate(){
-    }
+public interface Portata {
+    void stampaPortate();
 }

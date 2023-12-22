@@ -1,6 +1,6 @@
 package src;
 
-public class PrimiPiatti extends Portata{
+public class PrimiPiatti implements Portata{
     private String nome;
     private String descrizione;
     private String ingredienti;
@@ -47,7 +47,6 @@ public class PrimiPiatti extends Portata{
 
     @Override
     public void stampaPortate() {
-        super.stampaPortate();
         System.out.print(getNome()+"    ");
         System.out.print(getDescrizione()+ "    ");
         System.out.print(getIngredienti()+"   ");

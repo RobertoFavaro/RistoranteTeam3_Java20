@@ -1,12 +1,22 @@
 package src;
 
-public class Bevande extends Portata{
+public class Bevande implements Portata{
     private String nome;
     private double prezzo;
+    private EnumMenu enumMenu;
 
-    public Bevande(String nome, double prezzo) {
+    public Bevande(String nome, double prezzo,EnumMenu enumMenu) {
         this.nome = nome;
         this.prezzo = prezzo;
+        this.enumMenu = enumMenu;
+    }
+
+    public EnumMenu getEnumMenu() {
+        return enumMenu;
+    }
+
+    public void setEnumMenu(EnumMenu enumMenu) {
+        this.enumMenu = enumMenu;
     }
 
     public String getNome() {
@@ -27,12 +37,8 @@ public class Bevande extends Portata{
 
     @Override
     public void stampaPortate() {
-        super.stampaPortate();
-        System.out.print(getNome()+"     ");
+        System.out.println(getEnumMenu()+":");
+        System.out.print(getNome()+"    ");
         System.out.println(getPrezzo());
     }
-    //    public void stampaElementiDellaPortata(){
-//        System.out.print(getNome()+"     ");
-//        System.out.println(getPrezzo());
-//    }
 }

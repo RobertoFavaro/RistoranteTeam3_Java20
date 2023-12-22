@@ -1,17 +1,27 @@
 package src;
 
-public class SecondiPiatti extends Portata{
+public class SecondiPiatti implements Portata{
     private String nome;
     private String descrizione;
     private String ingredienti;
     private double prezzo;
+    private EnumMenu enumMenu;
 
 
-    public SecondiPiatti(String nome, String descrizione, double prezzo,String ingredienti) {
+    public SecondiPiatti(String nome, String descrizione, double prezzo,String ingredienti,EnumMenu enumMenu) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
         this.ingredienti=ingredienti;
+        this.enumMenu = enumMenu;
+    }
+
+    public EnumMenu getEnumMenu() {
+        return enumMenu;
+    }
+
+    public void setEnumMenu(EnumMenu enumMenu) {
+        this.enumMenu = enumMenu;
     }
 
     public String getNome() {
@@ -48,7 +58,7 @@ public class SecondiPiatti extends Portata{
 
     @Override
     public void stampaPortate() {
-        super.stampaPortate();
+        System.out.println(getEnumMenu()+":");
         System.out.print(getNome()+"    ");
         System.out.print(getDescrizione()+ "    ");
         System.out.print(getIngredienti()+"   ");

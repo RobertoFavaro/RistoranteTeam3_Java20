@@ -6,13 +6,10 @@ Bevande{
  -acqua
  -vino rosso
  -Coca Cola
- -caffè
- -succo
 }
 
 AntiPasti{
  -bruschette miste
- -insalata caprese
  -prosciutto e melone
  -carpaccio di manzo
 }

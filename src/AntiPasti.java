@@ -1,16 +1,26 @@
 package src;
 
-public class AntiPasti extends Portata{
+public class AntiPasti implements Portata {
     private String nome;
     private String descrizione;
     private String ingredienti;
     private  double prezzo;
+    private EnumMenu enumMenu;
 
-    public AntiPasti(String nome, String descrizione, String ingredienti, double prezzo) {
+    public AntiPasti(String nome, String descrizione, String ingredienti, double prezzo, EnumMenu enumMenu) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.ingredienti = ingredienti;
         this.prezzo = prezzo;
+        this.enumMenu = enumMenu;
+    }
+
+    public EnumMenu getEnumMenu() {
+        return enumMenu;
+    }
+
+    public void setEnumMenu(EnumMenu enumMenu) {
+        this.enumMenu = enumMenu;
     }
 
     public String getNome() {
@@ -47,10 +57,11 @@ public class AntiPasti extends Portata{
 
     @Override
     public void stampaPortate() {
-        super.stampaPortate();
+        System.out.println(getEnumMenu()+":");
         System.out.print(getNome()+"    ");
         System.out.print(getDescrizione()+ "    ");
         System.out.print(getIngredienti()+"   ");
         System.out.println(getPrezzo());
+
     }
 }
