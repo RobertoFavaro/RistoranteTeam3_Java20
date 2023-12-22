@@ -10,6 +10,15 @@ Bevande{
  -succo
 }
 
+AntiPasti{
+ -bruschette miste
+ -insalata caprese
+ -prosciutto e melone
+ -carpaccio di manzo
+}
+
+}
+
 Primi piatti {
 -pasta al pesto
 -carbonara
