@@ -5,13 +5,22 @@ public class PrimiPiatti implements Portata{
     private String descrizione;
     private String ingredienti;
     private  double prezzo;
+    private EnumMenu enumMenu;
 
-    public PrimiPiatti(String nome, String descrizione, String ingredienti, double prezzo) {
+    public PrimiPiatti(String nome, String descrizione, String ingredienti, double prezzo, EnumMenu enumMenu) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.ingredienti = ingredienti;
         this.prezzo = prezzo;
+        this.enumMenu = enumMenu;
     }
+    public EnumMenu getEnumMenu() {
+        return enumMenu;
+    }
+    public void setEnumMenu(EnumMenu enumMenu) {
+        this.enumMenu = enumMenu;
+    }
+
 
     public String getNome() {
         return nome;
@@ -47,6 +56,7 @@ public class PrimiPiatti implements Portata{
 
     @Override
     public void stampaPortate() {
+        System.out.println(getEnumMenu()+":");
         System.out.print(getNome()+"    ");
         System.out.print(getDescrizione()+ "    ");
         System.out.print(getIngredienti()+"   ");
