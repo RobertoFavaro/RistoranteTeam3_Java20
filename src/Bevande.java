@@ -1,38 +1,9 @@
 package src;
 
-public class Bevande implements Portata{
-    private String nome;
-    private double prezzo;
-    private EnumMenu enumMenu;
+public class Bevande extends Portata{
 
-    public Bevande(String nome, double prezzo,EnumMenu enumMenu) {
-        this.nome = nome;
-        this.prezzo = prezzo;
-        this.enumMenu = enumMenu;
-    }
-
-    public EnumMenu getEnumMenu() {
-        return enumMenu;
-    }
-
-    public void setEnumMenu(EnumMenu enumMenu) {
-        this.enumMenu = enumMenu;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getPrezzo() {
-        return prezzo;
-    }
-
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
+    public Bevande(String nome, String descrizione, String ingredienti, double prezzo, EnumMenu enumMenu) {
+        super(nome, descrizione, ingredienti, prezzo, enumMenu);
     }
 
     @Override

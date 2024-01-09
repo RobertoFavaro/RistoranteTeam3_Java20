@@ -34,16 +34,16 @@ public class Main {
         Portata dessert1 = new Dessert("nome: creme caramel", "descrizione: crema ricoperta di caramello", "ingredienti: latte, uova, zucchero, caramello", 4.00,EnumMenu.DESSERT);
         dessert1.stampaPortate();
         Portata dessert2 = new Dessert("nome: parfait di mandorle", "descrizione: semifreddo a base di mandorle caramellate e panna", "ingredienti: uova, zucchero, mandorle caramellate e panna", 4.00, EnumMenu.DESSERT);
-        dessert2.stampaPortate();
         Portata dessert3 = new Dessert("nome: cannolo", "descrizione: dolce tipico siciliano composto da una cialda croccante ripiena di ricotta dolce", "ingredienti: uova, ricotta, farina, zucchero", 3.00, EnumMenu.DESSERT);
-        dessert3.stampaPortate();
         Portata bevande1 = new Bevande("acqua", 1.00, EnumMenu.BEVANDE);
-        bevande1.stampaPortate();
         Portata bevande2 = new Bevande("vino rosso", 4.00, EnumMenu.BEVANDE);
-        bevande2.stampaPortate();
         Portata bevande3 = new Bevande("Coca Cola", 2.00, EnumMenu.BEVANDE);
-        bevande3.stampaPortate();
 
-
+        //todo eliminare stampaportata
+        Menu menu = new Menu();
+        menu.aggiungiPortata(primoPiatto1);
+        menu.aggiungiPortata(primoPiatto2);
+        menu.aggiungiPortata(primoPiatto3);
+        menu.stampaMenu();
     }
 }

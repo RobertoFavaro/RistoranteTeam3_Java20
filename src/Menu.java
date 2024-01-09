@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
+    //todo aggiungere nome tipo e nome del cuoco
     private List<Portata> portate;
 
     public Menu() {
