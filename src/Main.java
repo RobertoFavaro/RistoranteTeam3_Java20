@@ -18,7 +18,6 @@ public class Main {
         Portata antipasto2 = new AntiPasti("nome: prosciutto e melone", "descrizione: prosciutto di parma e melone fresco", "ingredienti: prosciutto e melone", 5.00,EnumMenu.ANTIPASTI);
         antipasto2.stampaPortate();
         Portata antipasto3 = new AntiPasti("nome: carpaccio di manzo", "descrizione: piatto a base di fettine di carne cruda di manzo servita con salsa", "ingredienti: manzo", 10.00,EnumMenu.ANTIPASTI);
-        antipasto3.stampaPortate();
         Portata primoPiatto1 = new PrimiPiatti("nome: pasta al pesto", "descrizione: pasta corta con basilico pestato", "ingredienti: pasta e basilico", 8.00,EnumMenu.PRIMIPIATTI);
         primoPiatto1.stampaPortate();
         Portata primoPiatto2 = new PrimiPiatti("nome: carbonara", "descrizione: piatto tipico romano a base di guanciale, uova, pecorino e pepe", "ingredienti: spaghetti, uova, pecorino, pepe, guanciale", 9.00,EnumMenu.PRIMIPIATTI);
