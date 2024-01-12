@@ -9,11 +9,27 @@ public class Menu {
     private String nomeCuoco;
     private List<Portata> portate;
 
-    public Menu(String nomeMenu, String tipoMenu, String nomeCuoco){
+    public Menu(String nomeMenu, String tipoMenu, String nomeCuoco) {
         this.nomeMenu = nomeMenu;
         this.tipoMenu = tipoMenu;
         this.nomeCuoco = nomeCuoco;
         this.portate = new ArrayList<>();
+    }
+
+    public String getNomeMenu() {
+        return nomeMenu;
+    }
+
+    public String getTipoMenu() {
+        return tipoMenu;
+    }
+
+    public String getNomeCuoco() {
+        return nomeCuoco;
+    }
+
+    public List<Portata> getPortate() {
+        return portate;
     }
 
     public void aggiungiPortata(Portata portata) {
