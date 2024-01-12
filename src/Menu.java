@@ -32,6 +32,22 @@ public class Menu {
         return portate;
     }
 
+    public void setNomeMenu(String nomeMenu) {
+        this.nomeMenu = nomeMenu;
+    }
+
+    public void setTipoMenu(String tipoMenu) {
+        this.tipoMenu = tipoMenu;
+    }
+
+    public void setNomeCuoco(String nomeCuoco) {
+        this.nomeCuoco = nomeCuoco;
+    }
+
+    public void setPortate(List<Portata> portate) {
+        this.portate = portate;
+    }
+
     public void aggiungiPortata(Portata portata) {
         portate.add(portata);
     }
