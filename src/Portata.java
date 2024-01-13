@@ -4,15 +4,11 @@ public class Portata {
     //todo questa deve essere una classe
     private String nome;
     private String descrizione;
-    private String ingredienti;
-    private double prezzo;
     private EnumMenu enumMenu;
 
-    public Portata(String nome, String descrizione, String ingredienti, double prezzo, EnumMenu enumMenu) {
+    public Portata(String nome, String descrizione, EnumMenu enumMenu) {
         this.nome = nome;
         this.descrizione = descrizione;
-        this.ingredienti = ingredienti;
-        this.prezzo = prezzo;
         this.enumMenu = enumMenu;
     }
 
@@ -32,36 +28,15 @@ public class Portata {
         this.descrizione = descrizione;
     }
 
-    public String getIngredienti() {
-        return ingredienti;
-    }
-
-    public void setIngredienti(String ingredienti) {
-        this.ingredienti = ingredienti;
-    }
-
-    public double getPrezzo() {
-        return prezzo;
-    }
-
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
-    }
-
     public EnumMenu getEnumMenu() {
         return enumMenu;
     }
 
-    public void setEnumMenu(EnumMenu enumMenu) {
-        this.enumMenu = enumMenu;
-    }
-    @Override
+
     public void stampaPortate() {
-        System.out.println(getEnumMenu()+":");
-        System.out.print(getNome()+"    ");
-        System.out.print(getDescrizione()+ "    ");
-        System.out.print(getIngredienti()+"   ");
-        System.out.println(getPrezzo());
+        System.out.println( enumMenu+":");
+        System.out.print( nome +"    ");
+        System.out.print(descrizione + "    ");
     }
-// void stampaPortate();
+
 }
