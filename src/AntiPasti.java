@@ -1,19 +1,37 @@
 package src;
 
-public class AntiPasti extends Portata {
+public class AntiPasti extends Portata{
+    private String descrizione;
+    private String ingredienti;
 
 
-    public AntiPasti(String nome, String descrizione, String ingredienti, double prezzo, EnumMenu enumMenu) {
-        super(nome, descrizione, ingredienti, prezzo, enumMenu);
+    public AntiPasti(String nome, String descrizione, String ingredienti, Double prezzo, EnumMenu enumMenu) {
+        super(nome, prezzo, enumMenu);
+        this.descrizione=descrizione;
+        this.ingredienti=ingredienti;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
+    public String getIngredienti() {
+        return ingredienti;
+    }
+
+    public void setIngredienti(String ingredienti) {
+        this.ingredienti = ingredienti;
     }
 
     @Override
     public void stampaPortate() {
-        System.out.println(getEnumMenu()+":");
-        System.out.print(getNome()+"    ");
-        System.out.print(getDescrizione()+ "    ");
-        System.out.print(getIngredienti()+"   ");
-        System.out.println(getPrezzo());
+        System.out.print(descrizione+ "    ");
+        System.out.print(ingredienti+"   ");
 
     }
+
 }

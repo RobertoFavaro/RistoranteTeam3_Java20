@@ -3,12 +3,12 @@ package src;
 public class Portata {
     //todo questa deve essere una classe
     private String nome;
-    private String descrizione;
+    private Double prezzo;
     private EnumMenu enumMenu;
 
-    public Portata(String nome, String descrizione, EnumMenu enumMenu) {
+    public Portata(String nome, double prezzo, EnumMenu enumMenu) {
         this.nome = nome;
-        this.descrizione = descrizione;
+        this.prezzo = prezzo;
         this.enumMenu = enumMenu;
     }
 
@@ -20,12 +20,12 @@ public class Portata {
         this.nome = nome;
     }
 
-    public String getDescrizione() {
-        return descrizione;
+    public Double getPrezzo() {
+        return prezzo;
     }
 
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
+    public void setPrezzo(Double prezzo) {
+        this.prezzo = prezzo;
     }
 
     public EnumMenu getEnumMenu() {
@@ -36,7 +36,7 @@ public class Portata {
     public void stampaPortate() {
         System.out.println( enumMenu+":");
         System.out.print( nome +"    ");
-        System.out.print(descrizione + "    ");
+        System.out.print(prezzo + "    ");
     }
 
 }
