@@ -48,14 +48,16 @@ public class Menu {
         this.portate = portate;
     }
 
-    public void aggiungiPortata(Portata portata) {
+    public void aggiungiPortata(Portata portata, EnumMenu enumMenu) {
+        portata.setEnumMenu(enumMenu);
         portate.add(portata);
     }
 
     public void stampaMenu() {
         System.out.println("MENU");
         for (Portata portata : portate) {
-            System.out.println("Nome: " + portata.getNome() + " Descrizione: " + portata.getDescrizione() + " Ingredienti: " + portata.getIngredienti() + " Prezzo: " + portata.getPrezzo() + " Tipo: " + portata.getEnumMenu());
+            System.out.println("Nome: " + portata.getNome() + " Prezzo: " + portata.getPrezzo() +
+                    " Tipo: " + portata.getEnumMenu().getTipoDiPortata());
         }
     }
 }

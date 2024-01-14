@@ -32,6 +32,9 @@ public class Portata {
         return enumMenu;
     }
 
+    public void setEnumMenu(EnumMenu enumMenu) {
+        this.enumMenu = enumMenu;
+    }
 
     public void stampaPortate() {
         System.out.println( enumMenu+":");

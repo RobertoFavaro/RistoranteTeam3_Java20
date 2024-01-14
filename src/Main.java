@@ -19,9 +19,9 @@ public class Main {
         Portata primoPiatto1 = new PrimiPiatti("nome: pasta al pesto", "descrizione: pasta corta con basilico pestato", "ingredienti: pasta e basilico", 8.00,EnumMenu.PRIMIPIATTI);
         Portata primoPiatto2 = new PrimiPiatti("nome: carbonara", "descrizione: piatto tipico romano a base di guanciale, uova, pecorino e pepe", "ingredienti: spaghetti, uova, pecorino, pepe, guanciale", 9.00,EnumMenu.PRIMIPIATTI);
         Portata primoPiatto3 = new PrimiPiatti("nome: fettucine al ragu", "descrizione: fettuccine a uovo col ragù come sugo", "ingredienti: pasta, manzo macinato, pasata di pomodoro, cipolle, carote", 8.00,EnumMenu.PRIMIPIATTI);
-        Portata secondoPiatto1 = new SecondiPiatti("nome: tagliata", "descrizione: manzo cotto al sangue e tagliato finemente", 15.00,"ingredienti: manzo",EnumMenu.SECONDIPIATTI);
-        Portata secondoPiatto2 = new SecondiPiatti("nome: grigliata mista", "descrizione: carni miste cotte sulla griglia", 12.00,"ingredienti: manzo, pollo, maiale",EnumMenu.SECONDIPIATTI);
-        Portata secondoPiatto3 = new SecondiPiatti("nome: hamburger", "descrizione: carne di manzo compattata e cucinata sulla piastra", 7.00, "ingredienti: manzo",EnumMenu.SECONDIPIATTI);
+        Portata secondoPiatto1 = new SecondiPiatti("nome: tagliata", "descrizione: manzo cotto al sangue e tagliato finemente", "ingredienti: manzo",15.00,EnumMenu.SECONDIPIATTI);
+        Portata secondoPiatto2 = new SecondiPiatti("nome: grigliata mista", "descrizione: carni miste cotte sulla griglia", "ingredienti: manzo, pollo, maiale",12.00,EnumMenu.SECONDIPIATTI);
+        Portata secondoPiatto3 = new SecondiPiatti("nome: hamburger", "descrizione: carne di manzo compattata e cucinata sulla piastra", "ingredienti: manzo",7.00 ,EnumMenu.SECONDIPIATTI);
         Portata dessert1 = new Dessert("nome: creme caramel", "descrizione: crema ricoperta di caramello", "ingredienti: latte, uova, zucchero, caramello", 4.00,EnumMenu.DESSERT);
         Portata dessert2 = new Dessert("nome: parfait di mandorle", "descrizione: semifreddo a base di mandorle caramellate e panna", "ingredienti: uova, zucchero, mandorle caramellate e panna", 4.00, EnumMenu.DESSERT);
         Portata dessert3 = new Dessert("nome: cannolo", "descrizione: dolce tipico siciliano composto da una cialda croccante ripiena di ricotta dolce", "ingredienti: uova, ricotta, farina, zucchero", 3.00, EnumMenu.DESSERT);
@@ -30,10 +30,15 @@ public class Main {
         Portata bevande3 = new Bevande("Coca Cola", 2.00, EnumMenu.BEVANDE);
 
         //todo eliminare stampaportata
-        Menu menu = new Menu();
-        menu.aggiungiPortata(primoPiatto1);
-        menu.aggiungiPortata(primoPiatto2);
-        menu.aggiungiPortata(primoPiatto3);
+
+        // Creazione del menu
+        Menu menu = new Menu("Menu alla Marc","Italiano","Marc");
+        menu.aggiungiPortata(antipasto2, EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(primoPiatto2, EnumMenu.PRIMIPIATTI);
+        menu.aggiungiPortata(secondoPiatto1, EnumMenu.SECONDIPIATTI);
+        menu.aggiungiPortata(dessert1, EnumMenu.DESSERT);
+        menu.aggiungiPortata(bevande3, EnumMenu.BEVANDE);
+
         menu.stampaMenu();
     }
 }
