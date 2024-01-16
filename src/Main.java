@@ -56,5 +56,6 @@ public class Main {
 
 
         menu.stampaMenu();
+
     }
 }
