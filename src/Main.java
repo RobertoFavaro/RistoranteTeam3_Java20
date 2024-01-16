@@ -29,15 +29,31 @@ public class Main {
         Portata bevande2 = new Bevande("vino rosso", 4.00, EnumMenu.BEVANDE);
         Portata bevande3 = new Bevande("Coca Cola", 2.00, EnumMenu.BEVANDE);
 
+
+
         //todo eliminare stampaportata
 
         // Creazione del menu
         Menu menu = new Menu("Menu alla Marc","Italiano","Marc");
-        menu.aggiungiPortata(antipasto2, EnumMenu.ANTIPASTI);
-        menu.aggiungiPortata(primoPiatto2, EnumMenu.PRIMIPIATTI);
-        menu.aggiungiPortata(secondoPiatto1, EnumMenu.SECONDIPIATTI);
-        menu.aggiungiPortata(dessert1, EnumMenu.DESSERT);
-        menu.aggiungiPortata(bevande3, EnumMenu.BEVANDE);
+
+
+        menu.aggiungiPortata(antipasto1,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(antipasto2,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(antipasto3,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(primoPiatto1,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(primoPiatto2,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(primoPiatto3,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(secondoPiatto1,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(secondoPiatto2,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(secondoPiatto3,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(dessert1,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(dessert2,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(dessert3,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(bevande1,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(bevande2,EnumMenu.ANTIPASTI);
+        menu.aggiungiPortata(bevande3,EnumMenu.ANTIPASTI);
+
+
 
         menu.stampaMenu();
     }
