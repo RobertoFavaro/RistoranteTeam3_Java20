@@ -1,6 +1,8 @@
 package src;
 
 public class Cliente {
+
+    //TODO aggiungere il tipo
     private String nome;
 
     public Cliente(String nome) {

@@ -48,16 +48,19 @@ public class Menu {
         this.portate = portate;
     }
 
-    public void aggiungiPortata(Portata portata, EnumMenu enumMenu) {
+    public void aggiungiPortata(Portata portata, MenuEnum enumMenu) {
         portata.setEnumMenu(enumMenu);
         portate.add(portata);
     }
 
+    //TODO facciamo uno stampa menu colorato, uno che prende il tipo, possiamo mettere le eccezioni
+
     public void stampaMenu() {
         System.out.println("MENU");
         for (Portata portata : portate) {
-            System.out.println("Nome: " + portata.getNome() + " Prezzo: " + portata.getPrezzo() +
-                    " Tipo: " + portata.getEnumMenu().getTipoDiPortata());
+            //TODO che usiamo a fare il polimorfismo?
+            portata.stampaPortate();
+
         }
     }
 }

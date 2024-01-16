@@ -4,9 +4,11 @@ public class Portata {
     //todo questa deve essere una classe
     private String nome;
     private Double prezzo;
-    private EnumMenu enumMenu;
+    private MenuEnum enumMenu;
 
-    public Portata(String nome, double prezzo, EnumMenu enumMenu) {
+    //TODO spostare qui descrizione perchè comune a tutti
+
+    public Portata(String nome, double prezzo, MenuEnum enumMenu) {
         this.nome = nome;
         this.prezzo = prezzo;
         this.enumMenu = enumMenu;
@@ -28,11 +30,11 @@ public class Portata {
         this.prezzo = prezzo;
     }
 
-    public EnumMenu getEnumMenu() {
+    public MenuEnum getEnumMenu() {
         return enumMenu;
     }
 
-    public void setEnumMenu(EnumMenu enumMenu) {
+    public void setEnumMenu(MenuEnum enumMenu) {
         this.enumMenu = enumMenu;
     }
 

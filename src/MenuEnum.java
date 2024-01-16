@@ -1,6 +1,8 @@
 package src;
 
-public enum EnumMenu {
+public enum MenuEnum {
+
+    //TODO portata Enum
     ANTIPASTI("Antipasto"),
     PRIMIPIATTI("Primo piatto"),
     SECONDIPIATTI("Secondo piatto"),
@@ -8,7 +10,7 @@ public enum EnumMenu {
     BEVANDE( "Bevanda");
     private final String tipoDiPortata;
 
-    EnumMenu(String tipoDiPortata) {
+    MenuEnum(String tipoDiPortata) {
         this.tipoDiPortata = tipoDiPortata;
     }
 

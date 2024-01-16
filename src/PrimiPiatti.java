@@ -5,7 +5,7 @@ public class PrimiPiatti extends Portata{
     private String ingredienti;
 
 
-    public PrimiPiatti(String nome, String descrizione, String ingredienti, Double prezzo, EnumMenu enumMenu) {
+    public PrimiPiatti(String nome, String descrizione, String ingredienti, Double prezzo, MenuEnum enumMenu) {
         super(nome, prezzo, enumMenu);
         this.descrizione=descrizione;
         this.ingredienti=ingredienti;
@@ -29,6 +29,8 @@ public class PrimiPiatti extends Portata{
 
     @Override
     public void stampaPortate() {
+        //TODO sistemare le altre classi
+        super.stampaPortate();
         System.out.print(descrizione+ "    ");
         System.out.print(ingredienti+"   ");
 

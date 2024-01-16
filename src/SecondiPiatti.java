@@ -5,7 +5,7 @@ public class SecondiPiatti extends Portata{
     private String ingredienti;
 
 
-    public SecondiPiatti(String nome, String descrizione, String ingredienti, Double prezzo, EnumMenu enumMenu) {
+    public SecondiPiatti(String nome, String descrizione, String ingredienti, Double prezzo, MenuEnum enumMenu) {
         super(nome, prezzo, enumMenu);
         this.descrizione=descrizione;
         this.ingredienti=ingredienti;
