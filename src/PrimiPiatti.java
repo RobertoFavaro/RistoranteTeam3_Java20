@@ -1,23 +1,16 @@
 package src;
 
 public class PrimiPiatti extends Portata{
-    private String descrizione;
+
     private String ingredienti;
 
 
     public PrimiPiatti(String nome, String descrizione, String ingredienti, Double prezzo, MenuEnum enumMenu) {
-        super(nome, prezzo, enumMenu);
-        this.descrizione=descrizione;
+        super(nome, prezzo, enumMenu,descrizione);
         this.ingredienti=ingredienti;
     }
 
-    public String getDescrizione() {
-        return descrizione;
-    }
 
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
-    }
 
     public String getIngredienti() {
         return ingredienti;
@@ -31,7 +24,6 @@ public class PrimiPiatti extends Portata{
     public void stampaPortate() {
         //TODO sistemare le altre classi
         super.stampaPortate();
-        System.out.print(descrizione+ "    ");
         System.out.print(ingredienti+"   ");
 
     }
