@@ -82,7 +82,7 @@ public class Ristorante {
             System.out.println("Impossibile rimuovere dal menù");
         }
     }
-    public void stampaMenu(TipologiaEnum tipologiaEnum){
+    public void stampaMenuRistorante(TipologiaEnum tipologiaEnum){
         System.out.println("menu " +tipologiaEnum);
         System.out.println(menu);
     }

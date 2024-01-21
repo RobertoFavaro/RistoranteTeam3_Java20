@@ -66,7 +66,7 @@ public class Main {
 
 
         //TODO tutte le operazione si faranno dalla classe ristorante che è il contenitore di tutti i field
-        ristorante.stampaMenu(TipologiaEnum.VEGETARIANO);
+        ristorante.stampaMenuRistorante(TipologiaEnum.VEGETARIANO);
         Cliente cliente1 = new Cliente("Mario", "Ostuni");
         ristorante.aggiungiPrenotazione("lunedì 7 ottobre",cliente1);
         ristorante.stampaPrenotazioni();
