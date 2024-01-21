@@ -53,14 +53,16 @@ public class Menu {
         portate.add(portata);
     }
 
-    //TODO facciamo uno stampa menu colorato, uno che prende il tipo, possiamo mettere le eccezioni
-
-    public void stampaMenu() {
-        System.out.println("MENU");
-        for (Portata portata : portate) {
-            //TODO che usiamo a fare il polimorfismo?
-            portata.stampaPortate();
-
+    //TODO facciamo uno stampa menu colorato, possiamo mettere le eccezioni
+    public void stampaMenu() throws Exception {
+        String rosso = "\u001B[31m";
+        if (!portate.isEmpty()) {
+            for (Portata portata : portate) {
+                System.out.print(rosso);
+                portata.stampaPortate();
+            }
+        } else {
+            throw new Exception("Impossibile stampare il Menu!");
         }
     }
 }

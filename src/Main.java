@@ -2,7 +2,7 @@ package src;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         // doppiamo stampare il menù qui dentro
         // ognuno di voi deve creare la propria classe (primiPiatti, secondi ecc ecc)
         // che campi ci saranno? nome - prezzo
