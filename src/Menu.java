@@ -8,12 +8,14 @@ public class Menu {
     private String tipoMenu;
     private String nomeCuoco;
     private List<Portata> portate;
+    private TipologiaEnum tipologiaMenu;
 
-    public Menu(String nomeMenu, String tipoMenu, String nomeCuoco) {
+    public Menu(String nomeMenu, String tipoMenu, String nomeCuoco, TipologiaEnum tipologiaMenu) {
         this.nomeMenu = nomeMenu;
         this.tipoMenu = tipoMenu;
         this.nomeCuoco = nomeCuoco;
         this.portate = new ArrayList<>();
+        this.tipologiaMenu = tipologiaMenu;
     }
 
     public String getNomeMenu() {
@@ -48,13 +50,18 @@ public class Menu {
         this.portate = portate;
     }
 
+    //aggiunta nuovo getter
+    public TipologiaEnum getTipologiaMenu() {
+        return tipologiaMenu;
+    }
+
     public void aggiungiPortata(Portata portata, MenuEnum enumMenu) {
         portata.setEnumMenu(enumMenu);
         portate.add(portata);
     }
 
     //TODO facciamo uno stampa menu colorato, possiamo mettere le eccezioni
-    public void stampaMenu() throws Exception {
+    public void stampaMenu() {
         String rosso = "\u001B[31m";
         if (!portate.isEmpty()) {
             for (Portata portata : portate) {
@@ -62,7 +69,7 @@ public class Menu {
                 portata.stampaPortate();
             }
         } else {
-            throw new Exception("Impossibile stampare il Menu!");
+            System.out.println("Il menu è vuoto.");
         }
     }
 }

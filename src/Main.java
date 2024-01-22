@@ -34,8 +34,11 @@ public class Main {
         //todo eliminare stampaportata
 
         // Creazione del menu
-        Menu menu1 = new Menu("Menu alla Marc","Italiano","Marc");
 
+        //aggiunto tipoMenu
+        Menu menu1 = new Menu("Menu alla Marc","VEGAN","Marc",TipologiaEnum.VEGAN);
+        Menu menuVegetariano = new Menu("Menu Veg", "VEGETARIANO", "CuocoVeg", TipologiaEnum.VEGETARIANO);
+        Menu menuVegan = new Menu("Menu Vegan", "NORMALE", "CuocoVegan", TipologiaEnum.NORMALE);
 
         menu1.aggiungiPortata(antipasto1, MenuEnum.ANTIPASTI);
         menu1.aggiungiPortata(antipasto2, MenuEnum.ANTIPASTI);
@@ -65,13 +68,19 @@ public class Main {
         ristorante.aggiungiMenu(menu1);
 
 
+        ristorante.aggiungiMenu(menuVegetariano);
+        ristorante.aggiungiMenu(menuVegan);
+
+
         //TODO tutte le operazione si faranno dalla classe ristorante che è il contenitore di tutti i field
+
         ristorante.stampaMenuRistorante(TipologiaEnum.VEGETARIANO);
         Cliente cliente1 = new Cliente("Mario", "Ostuni");
         ristorante.aggiungiPrenotazione("lunedì 7 ottobre",cliente1);
         ristorante.stampaPrenotazioni();
 
         //TODO dare la possibilità di prenotare e stampare la lista prenotazione (inserire la capienza massima del ristorante)
+
 
     }
 }

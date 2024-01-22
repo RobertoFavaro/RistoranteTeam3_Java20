@@ -60,8 +60,15 @@ public class Ristorante {
     public Cliente getPrenotazione(String data){
         return prenotazioni.get(data);
     }
-    public void aggiungiPrenotazione(String data, Cliente cliente){
-        prenotazioni.put(data, cliente);
+
+    public void aggiungiPrenotazione(String data, Cliente cliente) {
+        if (prenotazioni.size() < copertiRistorante) {
+            prenotazioni.put(data, cliente);
+            //aggiunto le stampe
+            System.out.println("Prenotazione effettuata per " + cliente.getNome() + " " + cliente.getCognome());
+        } else {
+            System.out.println("Prenotazione non disponibile, il ristorante è pieno.");
+        }
     }
 
     public void stampaPrenotazioni(){
@@ -82,9 +89,16 @@ public class Ristorante {
             System.out.println("Impossibile rimuovere dal menù");
         }
     }
-    public void stampaMenuRistorante(TipologiaEnum tipologiaEnum){
-        System.out.println("menu " +tipologiaEnum);
-        System.out.println(menu);
+
+    //aggiunto nuovo metodo stampa tipologia menu.
+    public void stampaMenuRistorante(TipologiaEnum tipologiaEnum) {
+        System.out.println("Menu " + tipologiaEnum);
+        for (Menu menuEntry : menu) {
+            if (menuEntry.getTipologiaMenu() == tipologiaEnum) {
+                menuEntry.stampaMenu();
+            }
+        }
     }
+
 }
 
