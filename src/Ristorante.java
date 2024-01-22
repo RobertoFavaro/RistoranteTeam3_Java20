@@ -9,6 +9,7 @@ public class Ristorante {
     private List<Portata> portate;
     private Map<String, Cliente> prenotazioni;
     private Integer copertiRistorante;
+    private Integer postiOccupati;
 
     public Ristorante(String nomeRistorante, Integer copertiRistorante) {
         this.nomeRistorante = nomeRistorante;
@@ -16,6 +17,7 @@ public class Ristorante {
         this.menu = new HashSet<>();
         this.prenotazioni = new HashMap<>();
         this.portate = new ArrayList<>();
+        this.postiOccupati = postiOccupati;
     }
 
     public String getNomeRistorante() {
@@ -32,6 +34,14 @@ public class Ristorante {
 
     public void setCopertiRistorante(Integer copertiRistorante) {
         this.copertiRistorante = copertiRistorante;
+    }
+
+    public Integer getPostiOccupati() {
+        return postiOccupati;
+    }
+
+    public void setPostiOccupati(Integer postiOccupati) {
+        this.postiOccupati = postiOccupati;
     }
 
     public Set<Menu> getMenu() {
@@ -98,6 +108,10 @@ public class Ristorante {
                 menuEntry.stampaMenu();
             }
         }
+    }
+    public boolean verificaCapienza(int copertiRichiesti) {
+        int postiDisponibili = copertiRistorante - postiOccupati;
+        return copertiRichiesti <= postiDisponibili;
     }
 
 }
