@@ -17,7 +17,7 @@ public class Ristorante {
         this.menu = new HashSet<>();
         this.prenotazioni = new HashMap<>();
         this.portate = new ArrayList<>();
-        this.postiOccupati = postiOccupati;
+        this.postiOccupati = 0;
     }
 
     public String getNomeRistorante() {
@@ -103,13 +103,17 @@ public class Ristorante {
     }
 
     //aggiunto nuovo metodo stampa tipologia menu.
-    public void stampaMenuRistorante(TipologiaEnum tipologiaEnum) {
-        System.out.println("Menu " + tipologiaEnum);
-        for (Menu menuEntry : menu) {
-            if (menuEntry.getTipologiaMenu() == tipologiaEnum) {
-                menuEntry.stampaMenu();
-            }
-        }
+//    public void stampaMenuRistorante(TipologiaEnum tipologiaEnum) {
+//        System.out.println("Menu " + tipologiaEnum);
+//        for (Menu menuEntry : menu) {
+//            if (menuEntry.getTipologiaMenu() == tipologiaEnum) {
+//                menuEntry.stampaMenu();
+//            }
+//        }
+//    }
+    public void stampaMenuRistorante(TipologiaEnum tipologiaEnum){
+        System.out.println("menu " +tipologiaEnum);
+        System.out.println(menu);
     }
 
     public void verificaCapienza(int copertiRichiesti, String data, Cliente cliente) {
@@ -121,6 +125,18 @@ public class Ristorante {
             System.out.println("Impossibile aggiungere prenotazione,siamo pieni!");
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "Ristorante{" +
+                "nomeRistorante='" + nomeRistorante + '\'' +
+                ", menu=" + menu +
+                ", portate=" + portate +
+                ", prenotazioni=" + prenotazioni +
+                ", copertiRistorante=" + copertiRistorante +
+                ", postiOccupati=" + postiOccupati +
+                '}';
     }
 }
 

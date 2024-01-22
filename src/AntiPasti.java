@@ -24,4 +24,10 @@ public class AntiPasti extends Portata{
 
     }
 
+    @Override
+    public String toString() {
+        return "AntiPasti{" +
+                "ingredienti='" + ingredienti + '\'' +
+                '}';
+    }
 }

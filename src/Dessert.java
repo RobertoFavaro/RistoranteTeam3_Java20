@@ -25,4 +25,10 @@ public class Dessert extends Portata{
 
     }
 
+    @Override
+    public String toString() {
+        return "Dessert{" +
+                "ingredienti='" + ingredienti + '\'' +
+                '}';
+    }
 }

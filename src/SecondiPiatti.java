@@ -26,4 +26,10 @@ public class SecondiPiatti extends Portata{
 
     }
 
+    @Override
+    public String toString() {
+        return "SecondiPiatti{" +
+                "ingredienti='" + ingredienti + '\'' +
+                '}';
+    }
 }

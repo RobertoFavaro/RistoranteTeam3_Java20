@@ -63,13 +63,26 @@ public class Menu {
     //TODO facciamo uno stampa menu colorato, possiamo mettere le eccezioni
     public void stampaMenu() {
         String rosso = "\u001B[31m";
+        String reset = "\u001B[31m";
         if (!portate.isEmpty()) {
             for (Portata portata : portate) {
-                System.out.print(rosso);
+                System.out.println(rosso);
                 portata.stampaPortate();
+                System.out.println(reset);
             }
         } else {
             System.out.println("Il menu è vuoto.");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "nomeMenu='" + nomeMenu + '\'' +
+                ", tipoMenu='" + tipoMenu + '\'' +
+                ", nomeCuoco='" + nomeCuoco + '\'' +
+                ", portate=" + portate +
+                ", tipologiaMenu=" + tipologiaMenu +
+                '}';
     }
 }

@@ -76,7 +76,10 @@ public class Main {
 
         ristorante.stampaMenuRistorante(TipologiaEnum.VEGETARIANO);
         Cliente cliente1 = new Cliente("Mario", "Ostuni");
+        Cliente cliente2 = new Cliente("federico", "gozales");
         ristorante.aggiungiPrenotazione("lunedì 7 ottobre",cliente1);
+        ristorante.stampaPrenotazioni();
+        ristorante.verificaCapienza(7,"12 ottobre 305842",cliente2);
         ristorante.stampaPrenotazioni();
 
         //TODO dare la possibilità di prenotare e stampare la lista prenotazione (inserire la capienza massima del ristorante)

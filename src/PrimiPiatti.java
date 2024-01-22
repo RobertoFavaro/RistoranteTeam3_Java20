@@ -28,4 +28,10 @@ public class PrimiPiatti extends Portata{
 
     }
 
+    @Override
+    public String toString() {
+        return "PrimiPiatti{" +
+                "ingredienti='" + ingredienti + '\'' +
+                '}';
+    }
 }
