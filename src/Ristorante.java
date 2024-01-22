@@ -67,7 +67,8 @@ public class Ristorante {
     public void setPrenotazioni(Map<String, Cliente> prenotazioni) {
         this.prenotazioni = prenotazioni;
     }
-    public Cliente getPrenotazione(String data){
+
+    public Cliente getPrenotazione(String data) {
         return prenotazioni.get(data);
     }
 
@@ -81,21 +82,22 @@ public class Ristorante {
         }
     }
 
-    public void stampaPrenotazioni(){
+    public void stampaPrenotazioni() {
         System.out.println(prenotazioni);
     }
 
-    public void aggiungiMenu(Menu menuAggiunto){
-        if(menuAggiunto != null){
+    public void aggiungiMenu(Menu menuAggiunto) {
+        if (menuAggiunto != null) {
             menu.add(menuAggiunto);
-        }else {
+        } else {
             System.out.println("Impossibile aggiungere al menù");
         }
     }
-    public void rimuoviMenu(Menu menuRimosso){
-        if(menu.contains(menuRimosso)){
+
+    public void rimuoviMenu(Menu menuRimosso) {
+        if (menu.contains(menuRimosso)) {
             menu.remove(menuRimosso);
-        }else {
+        } else {
             System.out.println("Impossibile rimuovere dal menù");
         }
     }
@@ -109,10 +111,16 @@ public class Ristorante {
             }
         }
     }
-    public boolean verificaCapienza(int copertiRichiesti) {
-        int postiDisponibili = copertiRistorante - postiOccupati;
-        return copertiRichiesti <= postiDisponibili;
-    }
 
+    public void verificaCapienza(int copertiRichiesti, String data, Cliente cliente) {
+        int postiDisponibili = copertiRistorante - postiOccupati;
+        if (copertiRichiesti <= postiDisponibili) {
+            aggiungiPrenotazione(data, cliente);
+            System.out.println("Prenotazione effettuata");
+        } else {
+            System.out.println("Impossibile aggiungere prenotazione,siamo pieni!");
+        }
+
+    }
 }
 
