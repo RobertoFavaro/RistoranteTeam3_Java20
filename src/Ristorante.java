@@ -1,11 +1,10 @@
 package src;
 
-import java.time.OffsetDateTime;
 import java.util.*;
 
 public class Ristorante {
     private String nomeRistorante;
-    private Set<Menu> menu;
+    private Set<Menu> menuSet;
     private List<Portata> portate;
     private Map<String, Cliente> prenotazioni;
     private Integer copertiRistorante;
@@ -14,7 +13,7 @@ public class Ristorante {
     public Ristorante(String nomeRistorante, Integer copertiRistorante) {
         this.nomeRistorante = nomeRistorante;
         this.copertiRistorante = copertiRistorante;
-        this.menu = new HashSet<>();
+        this.menuSet = new HashSet<>();
         this.prenotazioni = new HashMap<>();
         this.portate = new ArrayList<>();
         this.postiOccupati = 0;
@@ -44,12 +43,12 @@ public class Ristorante {
         this.postiOccupati = postiOccupati;
     }
 
-    public Set<Menu> getMenu() {
-        return menu;
+    public Set<Menu> getMenuSet() {
+        return menuSet;
     }
 
-    public void setMenu(Set<Menu> menu) {
-        this.menu = menu;
+    public void setMenuSet(Set<Menu> menuSet) {
+        this.menuSet = menuSet;
     }
 
     public List<Portata> getPortate() {
@@ -83,20 +82,21 @@ public class Ristorante {
     }
 
     public void stampaPrenotazioni() {
+        //TODO perche si usa un to string per stampare delle strutture dati?
         System.out.println(prenotazioni);
     }
 
     public void aggiungiMenu(Menu menuAggiunto) {
         if (menuAggiunto != null) {
-            menu.add(menuAggiunto);
+            menuSet.add(menuAggiunto);
         } else {
             System.out.println("Impossibile aggiungere al menù");
         }
     }
 
     public void rimuoviMenu(Menu menuRimosso) {
-        if (menu.contains(menuRimosso)) {
-            menu.remove(menuRimosso);
+        if (menuSet.contains(menuRimosso)) {
+            menuSet.remove(menuRimosso);
         } else {
             System.out.println("Impossibile rimuovere dal menù");
         }
@@ -113,9 +113,12 @@ public class Ristorante {
 //    }
     public void stampaMenuRistorante(TipologiaEnum tipologiaEnum){
         System.out.println("menu " +tipologiaEnum);
-        System.out.println(menu);
-    }
+        for (Menu menuVar: menuSet) {
+            menuVar.stampaMenu();
+        }
 
+    }
+//TODO facciamo un sistema di punteggi fidelity card
     public void verificaCapienza(int copertiRichiesti, String data, Cliente cliente) {
         int postiDisponibili = copertiRistorante - postiOccupati;
         if (copertiRichiesti <= postiDisponibili) {
@@ -131,7 +134,7 @@ public class Ristorante {
     public String toString() {
         return "Ristorante{" +
                 "nomeRistorante='" + nomeRistorante + '\'' +
-                ", menu=" + menu +
+                ", menu=" + menuSet +
                 ", portate=" + portate +
                 ", prenotazioni=" + prenotazioni +
                 ", copertiRistorante=" + copertiRistorante +

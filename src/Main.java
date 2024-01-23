@@ -74,10 +74,16 @@ public class Main {
 
         //TODO tutte le operazione si faranno dalla classe ristorante che è il contenitore di tutti i field
 
-        ristorante.stampaMenuRistorante(TipologiaEnum.VEGETARIANO);
         Cliente cliente1 = new Cliente("Mario", "Ostuni");
+        ristorante.aggiungiPrenotazione("lunedì 7 ottobre",cliente1);
+        ristorante.aggiungiPrenotazione("lunedì 7 ottobre",cliente1);;
         Cliente cliente2 = new Cliente("federico", "gozales");
         ristorante.aggiungiPrenotazione("lunedì 7 ottobre",cliente1);
+        //TODO cliente con la sua preferenza
+        //TODO bug menu vuoto
+        ristorante.stampaMenuRistorante(cliente1.getTipo());
+
+
         ristorante.stampaPrenotazioni();
         ristorante.verificaCapienza(7,"12 ottobre 305842",cliente2);
         ristorante.stampaPrenotazioni();

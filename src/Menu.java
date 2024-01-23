@@ -60,7 +60,7 @@ public class Menu {
         portate.add(portata);
     }
 
-    //TODO facciamo uno stampa menu colorato, possiamo mettere le eccezioni
+    //TODO facciamo uno stampa menu colorato, facciamo un enumerato per le stampe così possiamo usare più colori
     public void stampaMenu() {
         String rosso = "\u001B[31m";
         String reset = "\u001B[31m";
