@@ -3,89 +3,93 @@ package src;
 public class Main {
 
     public static void main(String[] args) throws Exception{
-        // doppiamo stampare il menù qui dentro
-        // ognuno di voi deve creare la propria classe (primiPiatti, secondi ecc ecc)
-        // che campi ci saranno? nome - prezzo
-        // che metodo deve avere ogni classe?  stampare
-        // dopo che avete finito, vi dovete chiedere ci sono campi e metodi duplicati per ogni classe differente? classe padre portata
-        // dopo che avete stampato il tutto nel main dobbiamo fare una classe che sposta la logica dal main all'oggetto menù
-        // dentro il main devono esserci solo le creazioni degli oggetti, no stampe ne altr, tutto deve essere inglobato in un oggetto menù e successivamente in un oggetto ristorante
-        // la classe menu deve avere un enumerato per il tipo e la possibilità di aggiungere le portate e stamparle tramite un metodo stampa menu
+//Creazione Portate : Antipasto/Primo-Piatto/Secondo-Piatto/Dessert/Bevande
+        Portata antipastoNormale = new AntiPasti("bruschette miste", "pomodorini al forno", "ingredienti: bruschetta, pomodoro, rosmarino", 3.50, MenuEnum.ANTIPASTI);
+        Portata antipastoVegano = new AntiPasti("Insalata mista", "Insalata di stagione con olive e pomodoro", "ingredienti: insalata, olive, pomodoro", 4.50, MenuEnum.ANTIPASTI);
+        Portata antipastoVegetariano = new AntiPasti("Caprese", "Mozzarella di bufala, pomodoro e basilico", "ingredienti: mozzarella di bufala, pomodoro, basilico", 6.00, MenuEnum.ANTIPASTI);
+
+        Portata primoPiattoNormale  = new PrimiPiatti("pasta al pesto", "pasta corta con basilico pestato", "ingredienti: pasta e basilico", 8.00, MenuEnum.PRIMIPIATTI);
+        Portata primoPiattoVegano = new PrimiPiatti("Pasta al pesto vegano", "Pasta con pesto vegano a base di basilico e noci", "ingredienti: pasta, basilico, noci", 9.00, MenuEnum.PRIMIPIATTI);
+        Portata primoPiattoVegetariano = new PrimiPiatti("Risotto ai funghi", "Risotto con funghi porcini e parmigiano", "ingredienti: riso, funghi porcini, parmigiano", 10.50, MenuEnum.PRIMIPIATTI);
+
+        Portata secondoPiattoNormale  = new SecondiPiatti("tagliata", "manzo cotto al sangue e tagliato finemente", "ingredienti: manzo",15.00, MenuEnum.SECONDIPIATTI);
+        Portata secondoPiattoVegano = new SecondiPiatti("Burger vegano", "Burger a base di lenticchie e quinoa", "ingredienti: lenticchie, quinoa", 8.00, MenuEnum.SECONDIPIATTI);
+        Portata secondoPiattoVegetariano = new SecondiPiatti("Melanzane alla parmigiana", "Melanzane grigliate con salsa di pomodoro e formaggio", "ingredienti: melanzane, pomodoro, formaggio", 12.00, MenuEnum.SECONDIPIATTI);
+
+        Portata dessertNormale  = new Dessert("creme caramel", "crema ricoperta di caramello", "ingredienti: latte, uova, zucchero, caramello", 4.00, MenuEnum.DESSERT);
+        Portata dessertVegano = new Dessert("Torta al cioccolato vegana", "Torta senza uova e latte, solo cioccolato", "ingredienti: cioccolato, farina, zucchero", 5.00, MenuEnum.DESSERT);
+        Portata dessertVegetariano = new Dessert("Tiramisù", "Dolce al cucchiaio con savoiardi e crema di mascarpone", "ingredienti: savoiardi, mascarpone", 7.00, MenuEnum.DESSERT);
 
 
-        Portata antipasto1 = new AntiPasti("bruschette miste", "pomodorini al forno", "ingredienti: bruschetta, pomodoro, rosmarino", 3.50, MenuEnum.ANTIPASTI);
-        Portata antipasto2 = new AntiPasti("prosciutto e melone", "prosciutto di parma e melone fresco", "ingredienti: prosciutto e melone", 5.00, MenuEnum.ANTIPASTI);
-        Portata antipasto3 = new AntiPasti("carpaccio di manzo", "piatto a base di fettine di carne cruda di manzo servita con salsa", "ingredienti: manzo", 10.00, MenuEnum.ANTIPASTI);
-        Portata primoPiatto1 = new PrimiPiatti("pasta al pesto", "pasta corta con basilico pestato", "ingredienti: pasta e basilico", 8.00, MenuEnum.PRIMIPIATTI);
-        Portata primoPiatto2 = new PrimiPiatti("carbonara", "piatto tipico romano a base di guanciale, uova, pecorino e pepe", "ingredienti: spaghetti, uova, pecorino, pepe, guanciale", 9.00, MenuEnum.PRIMIPIATTI);
-        Portata primoPiatto3 = new PrimiPiatti("fettucine al ragu", "fettuccine a uovo col ragù come sugo", "ingredienti: pasta, manzo macinato, pasata di pomodoro, cipolle, carote", 8.00, MenuEnum.PRIMIPIATTI);
-        Portata secondoPiatto1 = new SecondiPiatti("tagliata", "manzo cotto al sangue e tagliato finemente", "ingredienti: manzo",15.00, MenuEnum.SECONDIPIATTI);
-        Portata secondoPiatto2 = new SecondiPiatti("grigliata mista", "carni miste cotte sulla griglia", "ingredienti: manzo, pollo, maiale",12.00, MenuEnum.SECONDIPIATTI);
-        Portata secondoPiatto3 = new SecondiPiatti("hamburger", "carne di manzo compattata e cucinata sulla piastra", "ingredienti: manzo",7.00 , MenuEnum.SECONDIPIATTI);
-        Portata dessert1 = new Dessert("creme caramel", "crema ricoperta di caramello", "ingredienti: latte, uova, zucchero, caramello", 4.00, MenuEnum.DESSERT);
-        Portata dessert2 = new Dessert("parfait di mandorle", "semifreddo a base di mandorle caramellate e panna", "ingredienti: uova, zucchero, mandorle caramellate e panna", 4.00, MenuEnum.DESSERT);
-        Portata dessert3 = new Dessert("cannolo", "dolce tipico siciliano composto da una cialda croccante ripiena di ricotta dolce", "ingredienti: uova, ricotta, farina, zucchero", 3.00, MenuEnum.DESSERT);
         Portata bevande1 = new Bevande("acqua", 1.00,MenuEnum.BEVANDE,"bevanda dissetante che può essere naturale o frizzante" );
         Portata bevande2 = new Bevande("vino rosso", 4.00, MenuEnum.BEVANDE, "vino ricavato da uve ");
         Portata bevande3 = new Bevande("Coca Cola", 2.00, MenuEnum.BEVANDE,"bibita zuccherata accompagnata da una fetta di limone e ghiaccio");
 
-
-
         //todo eliminare stampaportata
 
         // Creazione del menu
-
-        //aggiunto tipoMenu
-        Menu menu1 = new Menu("Menu alla Marc","VEGAN","Marc",TipologiaEnum.VEGAN);
+        Menu menuNormale = new Menu("Menu Normale","VEGAN","CuocoMarc",TipologiaEnum.NORMALE);
         Menu menuVegetariano = new Menu("Menu Veg", "VEGETARIANO", "CuocoVeg", TipologiaEnum.VEGETARIANO);
-        Menu menuVegan = new Menu("Menu Vegan", "NORMALE", "CuocoVegan", TipologiaEnum.NORMALE);
+        Menu menuVegan = new Menu("Menu Vegan", "NORMALE", "CuocoVegan", TipologiaEnum.VEGAN);
 
-        menu1.aggiungiPortata(antipasto1, MenuEnum.ANTIPASTI);
-        menu1.aggiungiPortata(antipasto2, MenuEnum.ANTIPASTI);
-        menu1.aggiungiPortata(antipasto3, MenuEnum.ANTIPASTI);
-        menu1.aggiungiPortata(primoPiatto1, MenuEnum.PRIMIPIATTI);
-        menu1.aggiungiPortata(primoPiatto2, MenuEnum.PRIMIPIATTI);
-        menu1.aggiungiPortata(primoPiatto3, MenuEnum.PRIMIPIATTI);
-        menu1.aggiungiPortata(secondoPiatto1, MenuEnum.SECONDIPIATTI);
-        menu1.aggiungiPortata(secondoPiatto2, MenuEnum.SECONDIPIATTI);
-        menu1.aggiungiPortata(secondoPiatto3, MenuEnum.SECONDIPIATTI);
-        menu1.aggiungiPortata(dessert1, MenuEnum.DESSERT);
-        menu1.aggiungiPortata(dessert2, MenuEnum.DESSERT);
-        menu1.aggiungiPortata(dessert3, MenuEnum.DESSERT);
-        menu1.aggiungiPortata(bevande1, MenuEnum.BEVANDE);
-        menu1.aggiungiPortata(bevande2, MenuEnum.BEVANDE);
-        menu1.aggiungiPortata(bevande3, MenuEnum.BEVANDE);
+        //Aggiunta di portate ai menu : Antipasto/Primo-Piatto/Secondo-Piatto/Dessert/Bevande
+        //aggiunto menu Vegan/menu Vegetariano per il debug
+        menuNormale.aggiungiPortata(antipastoNormale , MenuEnum.ANTIPASTI);
+        menuVegan.aggiungiPortata(antipastoVegano, MenuEnum.ANTIPASTI);
+        menuVegetariano.aggiungiPortata(antipastoVegetariano, MenuEnum.ANTIPASTI);
+
+        menuNormale.aggiungiPortata(primoPiattoNormale , MenuEnum.PRIMIPIATTI);
+        menuVegan.aggiungiPortata(primoPiattoVegano, MenuEnum.PRIMIPIATTI);
+        menuVegetariano.aggiungiPortata(primoPiattoVegetariano, MenuEnum.PRIMIPIATTI);
+
+        menuNormale.aggiungiPortata(secondoPiattoNormale , MenuEnum.SECONDIPIATTI);
+        menuVegan.aggiungiPortata(secondoPiattoVegano, MenuEnum.SECONDIPIATTI);
+        menuVegetariano.aggiungiPortata(secondoPiattoVegetariano, MenuEnum.SECONDIPIATTI);
+
+        menuNormale.aggiungiPortata(dessertNormale , MenuEnum.DESSERT);
+        menuVegan.aggiungiPortata(dessertVegano, MenuEnum.DESSERT);
+        menuVegetariano.aggiungiPortata(dessertVegetariano, MenuEnum.DESSERT);
+
+        menuNormale.aggiungiPortata(bevande1, MenuEnum.BEVANDE);
+        menuVegan.aggiungiPortata(bevande2, MenuEnum.BEVANDE);
+        menuVegetariano.aggiungiPortata(bevande3, MenuEnum.BEVANDE);
+
         //STAMPA DEL MENU'
-        menu1.stampaMenu();
-
-
+        menuNormale.stampaMenu();
 
         //TODO si crea un ristorante
         //si crea un menù e s'inserisce
         //si creano le portate e s'inseriscono
 
+        // Creazione del ristorante
         Ristorante ristorante = new Ristorante("Ristorante al taglio", 45);
-        ristorante.aggiungiMenu(menu1);
-
-
+        ristorante.aggiungiMenu(menuNormale);
         ristorante.aggiungiMenu(menuVegetariano);
         ristorante.aggiungiMenu(menuVegan);
 
-
         //TODO tutte le operazione si faranno dalla classe ristorante che è il contenitore di tutti i field
 
-        Cliente cliente1 = new Cliente("Mario", "Ostuni");
-        ristorante.aggiungiPrenotazione("lunedì 7 ottobre",cliente1);
-        ristorante.aggiungiPrenotazione("lunedì 7 ottobre",cliente1);;
-        Cliente cliente2 = new Cliente("federico", "gozales");
-        ristorante.aggiungiPrenotazione("lunedì 7 ottobre",cliente1);
+        // Creazione dei clienti
+        Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN);
+        ristorante.aggiungiPrenotazione("lunedì 1 ottobre", cliente1);
+
+        Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO);
+        ristorante.aggiungiPrenotazione("lunedì 3 ottobre", cliente2);
+
         //TODO cliente con la sua preferenza
         //TODO bug menu vuoto
+
+        //Stampa il menu che vuole il cliente
         ristorante.stampaMenuRistorante(cliente1.getTipo());
+        // Debug ora dovrebbe stampare i menu che il cliente vuole xke ora ce qualcosa dentro "Menu Vegan/Menu Vegetariano"
 
-
+        //Stampa le prenotazioni
         ristorante.stampaPrenotazioni();
-        ristorante.verificaCapienza(7,"12 ottobre 305842",cliente2);
+
+        //Verifica la capienza e prenotazione
+        ristorante.verificaCapienza(7, "12 ottobre 305842", cliente2);
+
+        //Stampa le prenotazioni dopo l'aggiunta
         ristorante.stampaPrenotazioni();
 
         //TODO dare la possibilità di prenotare e stampare la lista prenotazione (inserire la capienza massima del ristorante)
