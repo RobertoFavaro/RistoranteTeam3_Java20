@@ -82,8 +82,12 @@ public class Ristorante {
     }
 
     public void stampaPrenotazioni() {
-        //TODO perche si usa un to string per stampare delle strutture dati?
-        System.out.println(prenotazioni);
+        System.out.println("Prenotazioni del ristorante:");
+        for (Map.Entry<String, Cliente> entry : prenotazioni.entrySet()) {
+            String data = entry.getKey();
+            Cliente nome = entry.getValue();
+            System.out.println("Data: " + data + ", Nome: " + nome);
+        }
     }
 
     public void aggiungiMenu(Menu menuAggiunto) {
