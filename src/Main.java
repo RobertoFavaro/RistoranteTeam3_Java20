@@ -70,10 +70,10 @@ public class Main {
         //TODO tutte le operazione si faranno dalla classe ristorante che è il contenitore di tutti i field
 
         // Creazione dei clienti
-        Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN);
+        Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN,AllergieEnum.GLUTINE);
         ristorante.aggiungiPrenotazione("lunedì 1 ottobre", cliente1);
 
-        Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO);
+        Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO,AllergieEnum.NESSUNAALLERGIA);
         ristorante.aggiungiPrenotazione("lunedì 3 ottobre", cliente2);
 
         //TODO cliente con la sua preferenza
