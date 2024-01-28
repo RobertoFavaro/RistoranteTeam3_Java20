@@ -63,12 +63,15 @@ public class Menu {
     //TODO facciamo uno stampa menu colorato, facciamo un enumerato per le stampe così possiamo usare più colori
 
     public void stampaMenu() {
-        String rosso = "\u001B[31m";
+                                  //Scegli colore
+        EnumColori coloreScelto = EnumColori.VERDE;
         String reset = "\u001B[0m";
         if (!portate.isEmpty()) {
             for (Portata portata : portate) {
+                System.out.println(coloreScelto.getColore());
                 portata.stampaPortate();
             }
+            System.out.println(reset);
         } else {
             // aggiunto nomeMenu per capire qualle menu è vuoto.
             System.out.println("Il menu " + nomeMenu + " è vuoto.");

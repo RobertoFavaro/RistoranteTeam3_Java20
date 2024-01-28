@@ -9,7 +9,7 @@ public class Portata {
 
     //TODO spostare qui descrizione perchè comune a tutti
 
-    public Portata(String nome, double prezzo, MenuEnum enumMenu,String descrizione) {
+    public Portata(String nome, double prezzo, MenuEnum enumMenu, String descrizione) {
         this.nome = nome;
         this.prezzo = prezzo;
         this.enumMenu = enumMenu;
@@ -49,10 +49,9 @@ public class Portata {
     }
 
     public void stampaPortate() {
-        System.out.println( enumMenu+":");
-        System.out.print( nome +"    ");
-        System.out.print(prezzo + "    ");
-        System.out.println(descrizione + " ");
+        System.out.println(enumMenu + ":");
+        System.out.printf("%-20s $%-10s\n", nome, prezzo);
+        System.out.println(descrizione);
     }
 
 }
