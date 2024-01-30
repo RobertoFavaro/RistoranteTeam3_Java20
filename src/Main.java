@@ -86,11 +86,15 @@ public class Main {
         //Stampa le prenotazioni
         ristorante.stampaPrenotazioni();
 
-        //Verifica la capienza e prenotazione
+        //Verifica la capienza massima,prenotazione e aggiunge 10 punti per ogni prenotazione
         ristorante.verificaCapienza(7, "12 ottobre 305842", cliente2);
+        ristorante.verificaCapienza(7, "12 ottobre 305842", cliente1);
+
 
         //Stampa le prenotazioni dopo l'aggiunta
         ristorante.stampaPrenotazioni();
+
+
 
         //TODO dare la possibilità di prenotare e stampare la lista prenotazione (inserire la capienza massima del ristorante)
 

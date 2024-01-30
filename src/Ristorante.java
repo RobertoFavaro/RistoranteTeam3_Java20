@@ -123,11 +123,14 @@ public class Ristorante {
 
     }
 //TODO facciamo un sistema di punteggi fidelity card
+    // METODO PER VERIFICARE LA CAPIENZA MASSIMA E AGGIUNTA DI 10 PUNTI PER OGNI PRENOTAZIONE
     public void verificaCapienza(int copertiRichiesti, String data, Cliente cliente) {
         int postiDisponibili = copertiRistorante - postiOccupati;
         if (copertiRichiesti <= postiDisponibili) {
             aggiungiPrenotazione(data, cliente);
             System.out.println("Prenotazione effettuata");
+            cliente.aggiungiPuntiClienti(10);
+
         } else {
             System.out.println("Impossibile aggiungere prenotazione,siamo pieni!");
         }
