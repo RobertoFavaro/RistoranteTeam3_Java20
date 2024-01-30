@@ -71,7 +71,7 @@ public class Ristorante {
         return prenotazioni.get(data);
     }
 
-    public void aggiungiPrenotazione(String data, Cliente cliente) {
+    private void aggiungiPrenotazionePrivata(String data, Cliente cliente) {
         if (prenotazioni.size() < copertiRistorante) {
             prenotazioni.put(data, cliente);
             //aggiunto le stampe
@@ -116,18 +116,24 @@ public class Ristorante {
 //        }
 //    }
     public void stampaMenuRistorante(TipologiaEnum tipologiaEnum){
-        System.out.println("menu " +tipologiaEnum);
-        for (Menu menuVar: menuSet) {
-            menuVar.stampaMenu();
-        }
+//        System.out.println("menu " +tipologiaEnum);
+//        for (Menu menuVar: menuSet) {
+//            menuVar.stampaMenu();
+//        }
 
+//        switch (tipologiaEnum){
+//            case VEGAN ->
+//        }
     }
+    
+    
+    
 //TODO facciamo un sistema di punteggi fidelity card
     // METODO PER VERIFICARE LA CAPIENZA MASSIMA E AGGIUNTA DI 10 PUNTI PER OGNI PRENOTAZIONE
-    public void verificaCapienza(int copertiRichiesti, String data, Cliente cliente) {
+    public void aggiungiPrenotazione(int copertiRichiesti, String data, Cliente cliente) {
         int postiDisponibili = copertiRistorante - postiOccupati;
         if (copertiRichiesti <= postiDisponibili) {
-            aggiungiPrenotazione(data, cliente);
+            aggiungiPrenotazionePrivata(data, cliente);
             System.out.println("Prenotazione effettuata");
             cliente.aggiungiPuntiClienti(10);
 

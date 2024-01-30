@@ -71,10 +71,10 @@ public class Main {
 
         // Creazione dei clienti
         Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN, AllergieEnum.GLUTINE);
-        ristorante.aggiungiPrenotazione("lunedì 1 ottobre", cliente1);
+        ristorante.aggiungiPrenotazione(6,"lunedì 1 ottobre", cliente1);
 
         Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO, AllergieEnum.NESSUNAALLERGIA);
-        ristorante.aggiungiPrenotazione("lunedì 3 ottobre", cliente2);
+        ristorante.aggiungiPrenotazione(4,"lunedì 3 ottobre", cliente2);
 
         //TODO cliente con la sua preferenza
         //TODO bug menu vuoto
@@ -86,9 +86,9 @@ public class Main {
         //Stampa le prenotazioni
         ristorante.stampaPrenotazioni();
 
-        //Verifica la capienza massima,prenotazione e aggiunge 10 punti per ogni prenotazione
-        ristorante.verificaCapienza(7, "12 ottobre 305842", cliente2);
-        ristorante.verificaCapienza(7, "12 ottobre 305842", cliente1);
+        //Verifica la capienza massima, prenotazione e aggiunge 10 punti per ogni prenotazione
+        ristorante.aggiungiPrenotazione(7, "12 ottobre 305842", cliente2);
+        ristorante.aggiungiPrenotazione(7, "12 ottobre 305842", cliente1);
 
 
         //Stampa le prenotazioni dopo l'aggiunta
