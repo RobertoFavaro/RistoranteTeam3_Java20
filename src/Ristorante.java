@@ -116,17 +116,20 @@ public class Ristorante {
 //        }
 //    }
     public void stampaMenuRistorante(TipologiaEnum tipologiaEnum){
-//        System.out.println("menu " +tipologiaEnum);
-//        for (Menu menuVar: menuSet) {
-//            menuVar.stampaMenu();
-//        }
+        System.out.println("menu " +tipologiaEnum);
+        for (Menu menuVar: menuSet) {
+            if(menuVar.getTipologiaMenu() == tipologiaEnum) {
+                menuVar.stampaMenu();
+            }
+        }
 
 //        switch (tipologiaEnum){
 //            case VEGAN ->
 //        }
     }
     
-    
+//TODO per uil db dobbiamo fare un file schermadb.sql dove ognugno di voi inserirà le proprie tabelle, quelle comuni le fate insieme (menu, risto) il resto ve le dividete
+//TODO dobbiamo usare lucid app per fare il diagramma ER(entità releazione)
     
 //TODO facciamo un sistema di punteggi fidelity card
     // METODO PER VERIFICARE LA CAPIENZA MASSIMA E AGGIUNTA DI 10 PUNTI PER OGNI PRENOTAZIONE
