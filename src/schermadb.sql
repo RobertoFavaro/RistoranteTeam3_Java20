@@ -6,6 +6,28 @@ CREATE TABLE Ristorante(
     CopertiRistorante INT,
     PostiOccupati INT
 );
+
+CREATE TABLE Cliente(
+    ID_Cliente INT PRIMARY KEY,
+    ID_Ristorante INT,
+    nome VARCHAR(255),
+    cognome VARCHAR(255),
+    punteggioCliente INT
+);
+ALTER TABLE Cliente ADD FOREIGN KEY (ID_Ristorante) REFERENCES Ristorante(ID_Ristorante);
+
+CREATE TABLE Menu(
+    ID_Menu INT PRIMARY KEY,
+    ID_Ristorante INT,
+    ID_Portata INT,
+    nomeMenu VARCHAR(255),
+    tipoMenu VARCHAR(255),
+    nomeCuoco VARCHAR(255)
+);
+ALTER TABLE Menu ADD FOREIGN KEY (ID_Ristorante) REFERENCES Ristorante(ID_Ristorante);
+ALTER TABLE Menu ADD FOREIGN KEY (ID_Portata) REFERENCES Portata(ID_Portata);
+
+
 CREATE TABLE Portata (
     ID_Portata INT PRIMARY KEY,
     ID_Ristorante INT,
