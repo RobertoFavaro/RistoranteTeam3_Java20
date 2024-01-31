@@ -17,11 +17,13 @@ CREATE TABLE Antipasti (
     ID_Portata INT,
     descrizione VARCHAR
 );
-CREATE TABLE DESSERT(
-ID_DESSERT INT PRIMARY KEY,
-ID_PORTATA INT,
+CREATE TABLE Dessert(
+ID_Dessert INT PRIMARY KEY,
+ID_Portata INT,
 descrizione VARCHAR(255)
 );
+
+ALTER TABLE Dessert ADD FOREIGN KEY (ID_Portata) REFERENCES Portata(ID_Portata);
 
 
 CREATE TABLE PrimiPiatti (
@@ -29,3 +31,5 @@ CREATE TABLE PrimiPiatti (
     ID_Portata INT,
     descrizione VARCHAR (255)
 );
+
+ALTER TABLE PrimiPiatti ADD FOREIGN KEY (ID_Portata) REFERENCES Portata(ID_Portata);
