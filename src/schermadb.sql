@@ -22,3 +22,10 @@ ID_DESSERT INT PRIMARY KEY,
 ID_PORTATA INT,
 descrizione VARCHAR(255)
 );
+
+
+CREATE TABLE PrimiPiatti (
+    ID_PrimiPiatti INT PRIMARY KEY,
+    ID_Portata INT,
+    descrizione VARCHAR (255)
+);
