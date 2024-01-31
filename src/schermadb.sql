@@ -17,3 +17,8 @@ CREATE TABLE Antipasti (
     ID_Portata INT,
     descrizione VARCHAR
 );
+CREATE TABLE DESSERT(
+ID_DESSERT INT PRIMARY KEY,
+ID_PORTATA INT,
+descrizione VARCHAR(255)
+);
