@@ -5,3 +5,15 @@ CREATE TABLE SECONDIPIATTI(
  ID_PORTATA INT,
  descrizione VARCHAR(255)
 );
+CREATE TABLE Bevande (
+    ID_Bevande INT PRIMARY KEY,
+    ID_Portata INT,
+    descrizione VARCHAR(255)
+);
+ALTER TABLE Bevande ADD FOREIGN KEY (ID_Ristorante) REFERENCES Ristorante(ID_Ristorante);
+
+CREATE TABLE Antipasti (
+    ID_Antipasti INT PRIMARY KEY,
+    ID_Portata INT,
+    descrizione VARCHAR
+);
