@@ -1,5 +1,7 @@
 package src;
 
+import java.util.HashMap;
+
 public class Main {
 
     public static void main(String[] args) throws Exception {
@@ -70,11 +72,22 @@ public class Main {
         //TODO tutte le operazione si faranno dalla classe ristorante che è il contenitore di tutti i field
 
         // Creazione dei clienti
-        Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN, AllergieEnum.GLUTINE);
+        Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN, AllergieEnum.GLUTINE, new HashMap<>());
         ristorante.aggiungiPrenotazione(6,"lunedì 1 ottobre", cliente1);
 
-        Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO, AllergieEnum.NESSUNAALLERGIA);
+        Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO, AllergieEnum.NESSUNAALLERGIA, new HashMap<>());
         ristorante.aggiungiPrenotazione(4,"lunedì 3 ottobre", cliente2);
+
+        //riscrivo le prenotazione per essere calcolato del methodo "calcolaSpesa"
+        cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
+        cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
+
+        //stampa il calcolo totale della spesa del cliente 1
+        double spesaTotaleCliente1 = cliente1.calcolaSpesa();
+        System.out.println("Spesa totale del cliente " + cliente1.getNome() + " " + cliente1.getCognome() + ": " + spesaTotaleCliente1);
+        //stampa il calcolo totale della spesa del cliente 2
+        double spesaTotaleCliente2 = cliente2.calcolaSpesa();
+        System.out.println("Spesa totale del cliente " + cliente2.getNome() + " " + cliente2.getCognome() + ": " + spesaTotaleCliente2);
 
         //TODO cliente con la sua preferenza
         //TODO bug menu vuoto
@@ -87,8 +100,8 @@ public class Main {
         ristorante.stampaPrenotazioni();
 
         //Verifica la capienza massima, prenotazione e aggiunge 10 punti per ogni prenotazione
-        ristorante.aggiungiPrenotazione(7, "12 ottobre 305842", cliente2);
-        ristorante.aggiungiPrenotazione(7, "12 ottobre 305842", cliente1);
+        ristorante.aggiungiPrenotazione(7, "13 ottobre 2024", cliente2);
+        ristorante.aggiungiPrenotazione(7, "12 ottobre 2024", cliente1);
 
 
         //Stampa le prenotazioni dopo l'aggiunta
