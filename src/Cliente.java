@@ -12,17 +12,18 @@ public class Cliente {
     private TipologiaEnum tipo;
     private AllergieEnum allergieEnum;
     private Integer punteggioCliente;
+    private Menu menuScelto;
 
     //ho aggiunto un nuovo campo per memorizzare le prenotazioni, che ho basato il metodo calcolaSpesa nelle prenotazione dei clienti.
-    private Map<String, Portata> prenotazioni;
 
-    public Cliente(String nome, String cognome, TipologiaEnum tipo, AllergieEnum allergieEnum, Map<String, Portata> prenotazioni) {
+
+    public Cliente(String nome, String cognome, TipologiaEnum tipo, AllergieEnum allergieEnum, Map<String) {
         this.nome = nome;
         this.cognome = cognome;
         this.tipo = tipo;
         this.allergieEnum = allergieEnum;
         this.punteggioCliente = 0;
-        this.prenotazioni = prenotazioni;
+
     }
 
 
@@ -59,10 +60,6 @@ public class Cliente {
         return tipo;
     }
 
-    // aggiunta di getter
-    public Map<String, Portata> getPrenotazioni() {
-        return prenotazioni;
-    }
 
     // questo metodo aggiunge punti ai clienti
     public void aggiungiPuntiClienti(Integer punti) {
@@ -88,16 +85,7 @@ public class Cliente {
     }
 
     //calcola la spesa totale della spea di un cliente usando le prenotazioni come base.
-    public void calcolaSpesa() {
-        double spesaTotale = 0.0;
 
-        for (Portata portata : prenotazioni.values()) {
-            spesaTotale += portata.getPrezzo();
-            aggiungiPuntiClienti(0);
-
-        }
-        System.out.println("Il conto del cliente " + getNome() + " " + getCognome() + " è di : " + spesaTotale);
-    }
 
 
     @Override

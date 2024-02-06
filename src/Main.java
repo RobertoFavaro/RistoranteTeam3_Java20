@@ -78,6 +78,7 @@ public class Main {
         Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO, AllergieEnum.NESSUNAALLERGIA, new HashMap<>());
         ristorante.aggiungiPrenotazione(4,"lunedì 3 ottobre", cliente2);
 
+        //TODO si devono usare i metodi
         //riscrivo le prenotazione per essere calcolato del methodo "calcolaSpesa"
         cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
         cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
@@ -87,7 +88,7 @@ public class Main {
         //TODO bug menu vuoto
 
         //Stampa il menu che vuole il cliente
-        ristorante.stampaMenuRistorante(cliente1.getTipo());
+        ristorante.visualizzaMenuAndOrdina(cliente1);
         // Debug ora dovrebbe stampare i menu che il cliente vuole xke ora ce qualcosa dentro "Menu Vegan/Menu Vegetariano"
 
         //Stampa le prenotazioni

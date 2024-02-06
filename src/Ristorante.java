@@ -106,26 +106,21 @@ public class Ristorante {
         }
     }
 
-    //aggiunto nuovo metodo stampa tipologia menu.
-//    public void stampaMenuRistorante(TipologiaEnum tipologiaEnum) {
-//        System.out.println("Menu " + tipologiaEnum);
-//        for (Menu menuEntry : menu) {
-//            if (menuEntry.getTipologiaMenu() == tipologiaEnum) {
-//                menuEntry.stampaMenu();
-//            }
-//        }
-//    }
-    public void stampaMenuRistorante(TipologiaEnum tipologiaEnum){
-        System.out.println("menu " +tipologiaEnum);
+    public void visualizzaMenuAndOrdina(Cliente cliente){
+        System.out.println("menu " +cliente.getTipo());
         for (Menu menuVar: menuSet) {
-            if(menuVar.getTipologiaMenu() == tipologiaEnum) {
+            if(menuVar.getTipologiaMenu() == cliente.getTipo()) {
+                //TODO inserire una variabile di appoggio menu perchè serve anche sotto qui
                 menuVar.stampaMenu();
             }
+
+            //TODO recuperiamo il cliente dalla mappa e settiamo sul cliente il menu che è stato stampato
         }
 
-//        switch (tipologiaEnum){
-//            case VEGAN ->
-//        }
+        //TODO dopo che abbiamo settato il menu dobbiamo fare un metodo paga che userà le portate del menu (a caso tra le varie sezioni) e stamperà il cliente che ha pagato
+        // toglie dalla mappa delle prenotazioni il cliente e da dei punti al cliente
+
+
     }
     
 //TODO per uil db dobbiamo fare un file schermadb.sql dove ognugno di voi inserirà le proprie tabelle, quelle comuni le fate insieme (menu, risto) il resto ve le dividete
@@ -144,6 +139,14 @@ public class Ristorante {
             System.out.println("Impossibile aggiungere prenotazione,siamo pieni!");
         }
 
+    }
+    public void pagaConto(Cliente cliente) {
+        double spesaTotale = 0.0;
+        for (Portata portata : prenotazioni.values()) {
+            spesaTotale += portata.getPrezzo();
+            cliente.aggiungiPuntiClienti(0);
+        }
+        System.out.println("Il conto del cliente " + cliente.getNome() + " " + cliente.getCognome() + " è di : " + spesaTotale);
     }
 
     @Override
