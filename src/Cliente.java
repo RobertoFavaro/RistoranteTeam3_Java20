@@ -88,14 +88,15 @@ public class Cliente {
     }
 
     //calcola la spesa totale della spea di un cliente usando le prenotazioni come base.
-    public double calcolaSpesa() {
+    public void calcolaSpesa() {
         double spesaTotale = 0.0;
 
         for (Portata portata : prenotazioni.values()) {
             spesaTotale += portata.getPrezzo();
-        }
+            aggiungiPuntiClienti(0);
 
-        return spesaTotale;
+        }
+        System.out.println("Il conto del cliente " + getNome() + " " + getCognome() + " è di : " + spesaTotale);
     }
 
 

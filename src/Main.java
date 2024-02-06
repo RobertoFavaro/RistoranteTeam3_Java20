@@ -82,12 +82,6 @@ public class Main {
         cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
         cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
 
-        //stampa il calcolo totale della spesa del cliente 1
-        double spesaTotaleCliente1 = cliente1.calcolaSpesa();
-        System.out.println("Spesa totale del cliente " + cliente1.getNome() + " " + cliente1.getCognome() + ": " + spesaTotaleCliente1);
-        //stampa il calcolo totale della spesa del cliente 2
-        double spesaTotaleCliente2 = cliente2.calcolaSpesa();
-        System.out.println("Spesa totale del cliente " + cliente2.getNome() + " " + cliente2.getCognome() + ": " + spesaTotaleCliente2);
 
         //TODO cliente con la sua preferenza
         //TODO bug menu vuoto
@@ -106,8 +100,10 @@ public class Main {
 
         //Stampa le prenotazioni dopo l'aggiunta
         ristorante.stampaPrenotazioni();
-
-
+        //stampa il calcolo totale della spesa del cliente 1
+        cliente1.calcolaSpesa();
+        //stampa il calcolo totale della spesa del cliente 2
+        cliente2.calcolaSpesa();
 
         //TODO dare la possibilità di prenotare e stampare la lista prenotazione (inserire la capienza massima del ristorante)
 
