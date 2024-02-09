@@ -105,24 +105,33 @@ public class Ristorante {
             System.out.println("Impossibile rimuovere dal menù");
         }
     }
-
     public void visualizzaMenuAndOrdina(Cliente cliente){
         System.out.println("menu " +cliente.getTipo());
+        Menu menu = null;
         for (Menu menuVar: menuSet) {
             if(menuVar.getTipologiaMenu() == cliente.getTipo()) {
                 //TODO inserire una variabile di appoggio menu perchè serve anche sotto qui
+                menu = menuVar;
                 menuVar.stampaMenu();
             }
-
             //TODO recuperiamo il cliente dalla mappa e settiamo sul cliente il menu che è stato stampato
+            if(menu != null){
+                cliente.setMenuScelto(menu);
+            }
         }
-
-        //TODO dopo che abbiamo settato il menu dobbiamo fare un metodo paga che userà le portate del menu (a caso tra le varie sezioni) e stamperà il cliente che ha pagato
-        // toglie dalla mappa delle prenotazioni il cliente e da dei punti al cliente
-
-
     }
-    
+    //TODO dopo che abbiamo settato il menu dobbiamo fare un metodo paga che userà le portate del menu (a caso tra le varie sezioni) e stamperà il cliente che ha pagato
+    // toglie dalla mappa delle prenotazioni il cliente e da dei punti al cliente
+    public void pagaConto(Cliente cliente) {
+        double spesaTotale = 0.0;
+        for (Portata portata : prenotazioni.values()) {
+            spesaTotale += portata.getPrezzo();
+            cliente.aggiungiPuntiClienti(0);
+        }
+        System.out.println("Il conto del cliente " + cliente.getNome() + " " + cliente.getCognome() + " è di : " + spesaTotale);
+    }
+
+
 //TODO per uil db dobbiamo fare un file schermadb.sql dove ognugno di voi inserirà le proprie tabelle, quelle comuni le fate insieme (menu, risto) il resto ve le dividete
 //TODO dobbiamo usare lucid app per fare il diagramma ER(entità releazione)
     
@@ -140,14 +149,7 @@ public class Ristorante {
         }
 
     }
-    public void pagaConto(Cliente cliente) {
-        double spesaTotale = 0.0;
-        for (Portata portata : prenotazioni.values()) {
-            spesaTotale += portata.getPrezzo();
-            cliente.aggiungiPuntiClienti(0);
-        }
-        System.out.println("Il conto del cliente " + cliente.getNome() + " " + cliente.getCognome() + " è di : " + spesaTotale);
-    }
+
 
     @Override
     public String toString() {

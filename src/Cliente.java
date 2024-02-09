@@ -17,15 +17,22 @@ public class Cliente {
     //ho aggiunto un nuovo campo per memorizzare le prenotazioni, che ho basato il metodo calcolaSpesa nelle prenotazione dei clienti.
 
 
-    public Cliente(String nome, String cognome, TipologiaEnum tipo, AllergieEnum allergieEnum, Map<String) {
+    public Cliente(String nome, String cognome, TipologiaEnum tipo, AllergieEnum allergieEnum, Menu menuScelto) {
         this.nome = nome;
         this.cognome = cognome;
         this.tipo = tipo;
         this.allergieEnum = allergieEnum;
         this.punteggioCliente = 0;
-
+        this.menuScelto = menuScelto;
     }
 
+    public Menu getMenuScelto() {
+        return menuScelto;
+    }
+
+    public void setMenuScelto(Menu menuScelto) {
+        this.menuScelto = menuScelto;
+    }
 
     public void setTipo(TipologiaEnum tipo) {
         this.tipo = tipo;
