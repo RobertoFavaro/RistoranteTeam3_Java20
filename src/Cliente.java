@@ -7,15 +7,10 @@ public class Cliente {
     //TODO aggiungere il tipo
     private String nome;
     private String cognome;
-
-    // aggiunto getTipo per il debug del main "menu vuoto"
     private TipologiaEnum tipo;
     private AllergieEnum allergieEnum;
     private Integer punteggioCliente;
     private Menu menuScelto;
-
-    //ho aggiunto un nuovo campo per memorizzare le prenotazioni, che ho basato il metodo calcolaSpesa nelle prenotazione dei clienti.
-
 
     public Cliente(String nome, String cognome, TipologiaEnum tipo, AllergieEnum allergieEnum, Menu menuScelto) {
         this.nome = nome;
@@ -33,7 +28,6 @@ public class Cliente {
     public void setMenuScelto(Menu menuScelto) {
         this.menuScelto = menuScelto;
     }
-
     public void setTipo(TipologiaEnum tipo) {
         this.tipo = tipo;
     }
@@ -62,7 +56,6 @@ public class Cliente {
         this.nome = nome;
     }
 
-    // aggiunto getTipo per il debug del main "menu vuoto"
     public TipologiaEnum getTipo() {
         return tipo;
     }
@@ -83,16 +76,28 @@ public class Cliente {
     // QUESTO METODO VERIFICA SE IL CLIENTE HA SUPERATO IL LIMITE MASSIMO DI PUNTEGGI
     public Boolean limitePunteggioClienti() {
         return punteggioCliente >= 100;
-
     }
-
-    //trova i tipi delle portate con get nomeportata.
     private Portata trovaPortata(String nomePortata) {
         return prenotazioni.get(nomePortata);
     }
 
-    //calcola la spesa totale della spea di un cliente usando le prenotazioni come base.
-
+    //Metodo per scegliere il menu usando tipologiaEnum per scegliere il tipo di menu.
+    public void scegliMenu(TipologiaEnum tipoMenu, List<Menu> menuList) {
+        for (Menu menu : menuList) {
+            if (menu.getTipologiaMenu() == tipoMenu) {
+                this.menuScelto = menu;
+                break;
+            }
+        }
+    }
+    // metodo per definire il costo di un certo Menu.
+    public double costoMenuScelto() {
+        if (menuScelto != null) {
+            return menuScelto.getCostoTotale();
+        } else {
+            return 0.0;
+        }
+    }
 
 
     @Override

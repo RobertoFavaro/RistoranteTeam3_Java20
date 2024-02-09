@@ -10,12 +10,16 @@ public class Menu {
     private List<Portata> portate;
     private TipologiaEnum tipologiaMenu;
 
-    public Menu(String nomeMenu, String tipoMenu, String nomeCuoco, TipologiaEnum tipologiaMenu) {
+    // creazione di un nuovo field per il metodo costoTotale
+    private Double costoTotale;
+
+    public Menu(String nomeMenu, String tipoMenu, String nomeCuoco, TipologiaEnum tipologiaMenu,Double costoTotale) {
         this.nomeMenu = nomeMenu;
         this.tipoMenu = tipoMenu;
         this.nomeCuoco = nomeCuoco;
         this.portate = new ArrayList<>();
         this.tipologiaMenu = tipologiaMenu;
+        this.costoTotale = costoTotale;
     }
 
     public String getNomeMenu() {
@@ -34,6 +38,14 @@ public class Menu {
         return portate;
     }
 
+    public TipologiaEnum getTipologiaMenu() {
+        return tipologiaMenu;
+    }
+    //nuovo getter costoTotale.
+    public Double getCostoTotale() {
+        return costoTotale;
+    }
+
     public void setNomeMenu(String nomeMenu) {
         this.nomeMenu = nomeMenu;
     }
@@ -49,10 +61,9 @@ public class Menu {
     public void setPortate(List<Portata> portate) {
         this.portate = portate;
     }
-
-    //aggiunta nuovo getter
-    public TipologiaEnum getTipologiaMenu() {
-        return tipologiaMenu;
+    //nuovo setter costoTotale.
+    public void setCostoTotale(Double costoTotale) {
+        this.costoTotale = costoTotale;
     }
 
     public void aggiungiPortata(Portata portata, MenuEnum enumMenu) {
