@@ -60,12 +60,18 @@ public class Cliente {
         return tipo;
     }
 
+    public Integer getPunteggioCliente() {
+        return punteggioCliente;
+    }
+
+    public void setPunteggioCliente(Integer punteggioCliente) {
+        this.punteggioCliente = punteggioCliente;
+    }
 
     // questo metodo aggiunge punti ai clienti
     public void aggiungiPuntiClienti(Integer punti) {
-        punti += 10;
-        System.out.println("Punteggio del cliente : " + nome + " " + punti);
-
+        setPunteggioCliente(punti);
+        System.out.println("Punteggio del cliente : " + nome + " " + getPunteggioCliente());
     }
 
     // questo metodo rimuove i punti

@@ -105,30 +105,36 @@ public class Ristorante {
             System.out.println("Impossibile rimuovere dal menù");
         }
     }
-    public void visualizzaMenuAndOrdina(Cliente cliente){
-        System.out.println("menu " +cliente.getTipo());
+    public void visualizzaMenuAndOrdina(Cliente cliente) {
+        System.out.println("Menu " + cliente.getTipo());
         Menu menu = null;
-        for (Menu menuVar: menuSet) {
-            if(menuVar.getTipologiaMenu() == cliente.getTipo()) {
+        for (Menu menuVar : menuSet) {
+            if (menuVar.getTipologiaMenu() == cliente.getTipo()) {
                 //TODO inserire una variabile di appoggio menu perchè serve anche sotto qui
                 menu = menuVar;
                 menuVar.stampaMenu();
+                break;
             }
-            //TODO recuperiamo il cliente dalla mappa e settiamo sul cliente il menu che è stato stampato
-            if(menu != null){
-                cliente.setMenuScelto(menu);
-            }
+        }
+        //TODO recuperiamo il cliente dalla mappa e settiamo sul cliente il menu che è stato stampato
+        if (menu != null) {
+            cliente.setMenuScelto(menu);
+        } else {
+            System.out.println("Menu non disponibile per il tipo di cliente");
         }
     }
     //TODO dopo che abbiamo settato il menu dobbiamo fare un metodo paga che userà le portate del menu (a caso tra le varie sezioni) e stamperà il cliente che ha pagato
     // toglie dalla mappa delle prenotazioni il cliente e da dei punti al cliente
     public void pagaConto(Cliente cliente) {
         double spesaTotale = 0.0;
-        for (Portata portata : prenotazioni.values()) {
+        Menu menu = cliente.getMenuScelto();
+        ArrayList<Portata> portateScelte = new ArrayList<>(menu.getPortate());
+        for (Portata portata : portateScelte) {
             spesaTotale += portata.getPrezzo();
-            cliente.aggiungiPuntiClienti(0);
         }
         System.out.println("Il conto del cliente " + cliente.getNome() + " " + cliente.getCognome() + " è di : " + spesaTotale);
+        prenotazioni.remove(cliente);
+        cliente.aggiungiPuntiClienti(10);
     }
 
 
