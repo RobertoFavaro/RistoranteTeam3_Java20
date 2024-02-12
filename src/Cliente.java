@@ -70,8 +70,8 @@ public class Cliente {
 
     // questo metodo aggiunge punti ai clienti
     public void aggiungiPuntiClienti(Integer punti) {
-        setPunteggioCliente(punti);
-        System.out.println("Punteggio del cliente : " + nome + " " + getPunteggioCliente());
+        setPunteggioCliente(getPunteggioCliente() + punti);
+        System.out.println("Punteggio del cliente : " + this.nome + " " + getPunteggioCliente());
     }
 
     // questo metodo rimuove i punti
