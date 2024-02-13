@@ -1,6 +1,7 @@
 package src;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Cliente {
 
@@ -88,7 +89,7 @@ public class Cliente {
 //    }
 
     //Metodo per scegliere il menu usando tipologiaEnum per scegliere il tipo di menu.
-    public void scegliMenu(TipologiaEnum tipoMenu, List<Menu> menuList) {
+    public void scegliMenu(TipologiaEnum tipoMenu, Set<Menu> menuList) {
         for (Menu menu : menuList) {
             if (menu.getTipologiaMenu() == tipoMenu) {
                 this.menuScelto = menu;

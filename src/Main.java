@@ -107,5 +107,8 @@ public class Main {
 
         //TODO dare la possibilità di prenotare e stampare la lista prenotazione (inserire la capienza massima del ristorante)
 
+
+        cliente1.scegliMenu(TipologiaEnum.VEGAN, ristorante.getMenuSet());
+        System.out.println("Costo menu scelto: "+cliente1.costoMenuScelto());
     }
 }
