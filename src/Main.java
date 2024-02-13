@@ -30,9 +30,9 @@ public class Main {
         //todo eliminare stampaportata
 
         // Creazione del menu
-        Menu menuNormale = new Menu("Menu Normale", "VEGAN", "CuocoMarc", TipologiaEnum.NORMALE);
-        Menu menuVegetariano = new Menu("Menu Veg", "VEGETARIANO", "CuocoVeg", TipologiaEnum.VEGETARIANO);
-        Menu menuVegan = new Menu("Menu Vegan", "NORMALE", "CuocoVegan", TipologiaEnum.VEGAN);
+        Menu menuNormale = new Menu("Menu Normale", "VEGAN", "CuocoMarc", TipologiaEnum.NORMALE, 30.00);
+        Menu menuVegetariano = new Menu("Menu Veg", "VEGETARIANO", "CuocoVeg", TipologiaEnum.VEGETARIANO, 40.00);
+        Menu menuVegan = new Menu("Menu Vegan", "NORMALE", "CuocoVegan", TipologiaEnum.VEGAN, 45.00);
 
         //Aggiunta di portate ai menu : Antipasto/Primo-Piatto/Secondo-Piatto/Dessert/Bevande
         //aggiunto menu Vegan/menu Vegetariano per il debug
@@ -72,17 +72,16 @@ public class Main {
         //TODO tutte le operazione si faranno dalla classe ristorante che è il contenitore di tutti i field
 
         // Creazione dei clienti
-        Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN, AllergieEnum.GLUTINE, new HashMap<>());
+        Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN, AllergieEnum.GLUTINE, menuVegan);
         ristorante.aggiungiPrenotazione(6,"lunedì 1 ottobre", cliente1);
 
-        Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO, AllergieEnum.NESSUNAALLERGIA, new HashMap<>());
+        Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO, AllergieEnum.NESSUNAALLERGIA, menuVegetariano);
         ristorante.aggiungiPrenotazione(4,"lunedì 3 ottobre", cliente2);
 
         //TODO si devono usare i metodi
         //riscrivo le prenotazione per essere calcolato del methodo "calcolaSpesa"
-        cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
-        cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
-
+//        cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
+//        cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
 
         //TODO cliente con la sua preferenza
         //TODO bug menu vuoto
@@ -102,9 +101,9 @@ public class Main {
         //Stampa le prenotazioni dopo l'aggiunta
         ristorante.stampaPrenotazioni();
         //stampa il calcolo totale della spesa del cliente 1
-        cliente1.calcolaSpesa();
+        ristorante.pagaConto(cliente1);
         //stampa il calcolo totale della spesa del cliente 2
-        cliente2.calcolaSpesa();
+        ristorante.pagaConto(cliente2);
 
         //TODO dare la possibilità di prenotare e stampare la lista prenotazione (inserire la capienza massima del ristorante)
 

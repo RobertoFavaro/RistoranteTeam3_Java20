@@ -83,9 +83,9 @@ public class Cliente {
     public Boolean limitePunteggioClienti() {
         return punteggioCliente >= 100;
     }
-    private Portata trovaPortata(String nomePortata) {
-        return prenotazioni.get(nomePortata);
-    }
+//    private Portata trovaPortata(String nomePortata) {
+//        return prenotazioni.get(nomePortata);
+//    }
 
     //Metodo per scegliere il menu usando tipologiaEnum per scegliere il tipo di menu.
     public void scegliMenu(TipologiaEnum tipoMenu, List<Menu> menuList) {
