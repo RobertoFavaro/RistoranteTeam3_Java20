@@ -1,8 +1,10 @@
 package src;
 
 public class Bevande extends Portata{
-    public Bevande(String nome, double prezzo, MenuEnum enumMenu,String descrizione) {
-        super(nome, prezzo, enumMenu,descrizione);
+    private String ph;
+    public Bevande(String nome, String descrizione, String ingredienti, Double prezzo, MenuEnum enumMenu, Integer id, String ph) {
+        super(nome, prezzo, enumMenu,descrizione, ingredienti, id);
+        this.ph = ph;
     }
 
     @Override

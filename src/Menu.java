@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
+    private Integer id;
     private String nomeMenu;
     private String tipoMenu;
     private String nomeCuoco;
@@ -13,13 +14,14 @@ public class Menu {
     // creazione di un nuovo field per il metodo costoTotale
     private Double costoTotale;
 
-    public Menu(String nomeMenu, String tipoMenu, String nomeCuoco, TipologiaEnum tipologiaMenu,Double costoTotale) {
+    public Menu(String nomeMenu, String tipoMenu, String nomeCuoco, TipologiaEnum tipologiaMenu,Double costoTotale, Integer id) {
         this.nomeMenu = nomeMenu;
         this.tipoMenu = tipoMenu;
         this.nomeCuoco = nomeCuoco;
         this.portate = new ArrayList<>();
         this.tipologiaMenu = tipologiaMenu;
         this.costoTotale = costoTotale;
+        this.id = id;
     }
 
     public String getNomeMenu() {

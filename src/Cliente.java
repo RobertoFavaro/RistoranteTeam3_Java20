@@ -6,6 +6,7 @@ import java.util.Set;
 public class Cliente {
 
     //TODO aggiungere il tipo
+    private Integer id;
     private String nome;
     private String cognome;
     private TipologiaEnum tipo;
@@ -13,13 +14,14 @@ public class Cliente {
     private Integer punteggioCliente;
     private Menu menuScelto;
 
-    public Cliente(String nome, String cognome, TipologiaEnum tipo, AllergieEnum allergieEnum, Menu menuScelto) {
+    public Cliente(String nome, String cognome, TipologiaEnum tipo, AllergieEnum allergieEnum, Menu menuScelto, Integer id) {
         this.nome = nome;
         this.cognome = cognome;
         this.tipo = tipo;
         this.allergieEnum = allergieEnum;
         this.punteggioCliente = 0;
         this.menuScelto = menuScelto;
+        this.id = id;
     }
 
     public Menu getMenuScelto() {

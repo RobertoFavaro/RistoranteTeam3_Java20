@@ -6,14 +6,34 @@ public class Portata {
     private Double prezzo;
     private MenuEnum enumMenu;
     private String descrizione;
+    private String ingredienti;
+    private Integer id;
 
     //TODO spostare qui descrizione perchè comune a tutti
 
-    public Portata(String nome, double prezzo, MenuEnum enumMenu, String descrizione) {
+    public Portata(String nome, double prezzo, MenuEnum enumMenu, String descrizione, String ingredienti, Integer id) {
         this.nome = nome;
         this.prezzo = prezzo;
         this.enumMenu = enumMenu;
         this.descrizione = descrizione;
+        this.ingredienti = ingredienti;
+        this.id = id;
+    }
+
+    public String getIngredienti() {
+        return ingredienti;
+    }
+
+    public void setIngredienti(String ingredienti) {
+        this.ingredienti = ingredienti;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {

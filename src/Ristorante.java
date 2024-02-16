@@ -3,6 +3,7 @@ package src;
 import java.util.*;
 
 public class Ristorante {
+    private Integer id;
     private String nomeRistorante;
     private Set<Menu> menuSet;
     private List<Portata> portate;
@@ -10,7 +11,8 @@ public class Ristorante {
     private Integer copertiRistorante;
     private Integer postiOccupati;
 
-    public Ristorante(String nomeRistorante, Integer copertiRistorante) {
+    public Ristorante(Integer id, String nomeRistorante, Integer copertiRistorante) {
+        this.id = id;
         this.nomeRistorante = nomeRistorante;
         this.copertiRistorante = copertiRistorante;
         this.menuSet = new HashSet<>();

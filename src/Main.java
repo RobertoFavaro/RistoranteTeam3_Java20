@@ -6,33 +6,32 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 //Creazione Portate : Antipasto/Primo-Piatto/Secondo-Piatto/Dessert/Bevande
-        Portata antipastoNormale = new AntiPasti("bruschette miste", "pomodorini al forno", "ingredienti: bruschetta, pomodoro, rosmarino", 3.50, MenuEnum.ANTIPASTI);
-        Portata antipastoVegano = new AntiPasti("Insalata mista", "Insalata di stagione con olive e pomodoro", "ingredienti: insalata, olive, pomodoro", 4.50, MenuEnum.ANTIPASTI);
-        Portata antipastoVegetariano = new AntiPasti("Caprese", "Mozzarella di bufala, pomodoro e basilico", "ingredienti: mozzarella di bufala, pomodoro, basilico", 6.00, MenuEnum.ANTIPASTI);
+        Portata antipastoNormale = new AntiPasti("bruschette miste", "pomodorini al forno", "ingredienti: bruschetta, pomodoro, rosmarino", 3.50, MenuEnum.ANTIPASTI, 1, "cotto");
+        Portata antipastoVegano = new AntiPasti("Insalata mista", "Insalata di stagione con olive e pomodoro", "ingredienti: insalata, olive, pomodoro", 4.50, MenuEnum.ANTIPASTI,2 , "crudo");
+        Portata antipastoVegetariano = new AntiPasti("Caprese", "Mozzarella di bufala, pomodoro e basilico", "ingredienti: mozzarella di bufala, pomodoro, basilico", 6.00, MenuEnum.ANTIPASTI,3, "crudo");
 
-        Portata primoPiattoNormale = new PrimiPiatti("pasta al pesto", "pasta corta con basilico pestato", "ingredienti: pasta e basilico", 8.00, MenuEnum.PRIMIPIATTI);
-        Portata primoPiattoVegano = new PrimiPiatti("Pasta al pesto vegano", "Pasta con pesto vegano a base di basilico e noci", "ingredienti: pasta, basilico, noci", 9.00, MenuEnum.PRIMIPIATTI);
-        Portata primoPiattoVegetariano = new PrimiPiatti("Risotto ai funghi", "Risotto con funghi porcini e parmigiano", "ingredienti: riso, funghi porcini, parmigiano", 10.50, MenuEnum.PRIMIPIATTI);
+        Portata primoPiattoNormale = new PrimiPiatti("pasta al pesto", "pasta corta con basilico pestato", "ingredienti: pasta e basilico", 8.00, MenuEnum.PRIMIPIATTI, 1, "12 minuti");
+        Portata primoPiattoVegano = new PrimiPiatti("Pasta al pesto vegano", "Pasta con pesto vegano a base di basilico e noci", "ingredienti: pasta, basilico, noci", 9.00, MenuEnum.PRIMIPIATTI,2 , "11 minuti");
+        Portata primoPiattoVegetariano = new PrimiPiatti("Risotto ai funghi", "Risotto con funghi porcini e parmigiano", "ingredienti: riso, funghi porcini, parmigiano", 10.50, MenuEnum.PRIMIPIATTI, 3, "15 minuti");
 
-        Portata secondoPiattoNormale = new SecondiPiatti("tagliata", "manzo cotto al sangue e tagliato finemente", "ingredienti: manzo", 15.00, MenuEnum.SECONDIPIATTI);
-        Portata secondoPiattoVegano = new SecondiPiatti("Burger vegano", "Burger a base di lenticchie e quinoa", "ingredienti: lenticchie, quinoa", 8.00, MenuEnum.SECONDIPIATTI);
-        Portata secondoPiattoVegetariano = new SecondiPiatti("Melanzane alla parmigiana", "Melanzane grigliate con salsa di pomodoro e formaggio", "ingredienti: melanzane, pomodoro, formaggio", 12.00, MenuEnum.SECONDIPIATTI);
+        Portata secondoPiattoNormale = new SecondiPiatti("tagliata", "manzo cotto al sangue e tagliato finemente", "ingredienti: manzo", 15.00, MenuEnum.SECONDIPIATTI,1, "20 minuti");
+        Portata secondoPiattoVegano = new SecondiPiatti("Burger vegano", "Burger a base di lenticchie e quinoa", "ingredienti: lenticchie, quinoa", 8.00, MenuEnum.SECONDIPIATTI,2, "7 minuti");
+        Portata secondoPiattoVegetariano = new SecondiPiatti("Melanzane alla parmigiana", "Melanzane grigliate con salsa di pomodoro e formaggio", "ingredienti: melanzane, pomodoro, formaggio", 12.00, MenuEnum.SECONDIPIATTI,3 ,"40 minuti");
 
-        Portata dessertNormale = new Dessert("creme caramel", "crema ricoperta di caramello", "ingredienti: latte, uova, zucchero, caramello", 4.00, MenuEnum.DESSERT);
-        Portata dessertVegano = new Dessert("Torta al cioccolato vegana", "Torta senza uova e latte, solo cioccolato", "ingredienti: cioccolato, farina, zucchero", 5.00, MenuEnum.DESSERT);
-        Portata dessertVegetariano = new Dessert("Tiramisù", "Dolce al cucchiaio con savoiardi e crema di mascarpone", "ingredienti: savoiardi, mascarpone", 7.00, MenuEnum.DESSERT);
+        Portata dessertNormale = new Dessert("creme caramel", "crema ricoperta di caramello", "ingredienti: latte, uova, zucchero, caramello", 4.00, MenuEnum.DESSERT,1,"caldo");
+        Portata dessertVegano = new Dessert("Torta al cioccolato vegana", "Torta senza uova e latte, solo cioccolato", "ingredienti: cioccolato, farina, zucchero", 5.00, MenuEnum.DESSERT,2,"calda");
+        Portata dessertVegetariano = new Dessert("Tiramisù", "Dolce al cucchiaio con savoiardi e crema di mascarpone", "ingredienti: savoiardi, mascarpone", 7.00, MenuEnum.DESSERT,3, "freddo");
 
-
-        Portata bevande1 = new Bevande("acqua", 1.00, MenuEnum.BEVANDE, "bevanda dissetante che può essere naturale o frizzante");
-        Portata bevande2 = new Bevande("vino rosso", 4.00, MenuEnum.BEVANDE, "vino ricavato da uve ");
-        Portata bevande3 = new Bevande("Coca Cola", 2.00, MenuEnum.BEVANDE, "bibita zuccherata accompagnata da una fetta di limone e ghiaccio");
+        Portata bevande1 = new Bevande("acqua", "bevanda dissetante che può essere naturale o frizzante" , "h2o",1.00,MenuEnum.BEVANDE , 1,"7 basico");
+        Portata bevande2 = new Bevande("vino rosso","vino ricavato da uve ", "uva" ,4.00 ,MenuEnum.BEVANDE,2,"4 acido");
+        Portata bevande3 = new Bevande("Coca Cola","bibita zuccherata accompagnata da una fetta di limone e ghiaccio", "Coca Cola", 2.00,MenuEnum.BEVANDE,3, "3 acido");
 
         //todo eliminare stampaportata
 
         // Creazione del menu
-        Menu menuNormale = new Menu("Menu Normale", "VEGAN", "CuocoMarc", TipologiaEnum.NORMALE, 30.00);
-        Menu menuVegetariano = new Menu("Menu Veg", "VEGETARIANO", "CuocoVeg", TipologiaEnum.VEGETARIANO, 40.00);
-        Menu menuVegan = new Menu("Menu Vegan", "NORMALE", "CuocoVegan", TipologiaEnum.VEGAN, 45.00);
+        Menu menuNormale = new Menu("Menu Normale", "VEGAN", "CuocoMarc", TipologiaEnum.NORMALE, 30.00, 1);
+        Menu menuVegetariano = new Menu("Menu Veg", "VEGETARIANO", "CuocoVeg", TipologiaEnum.VEGETARIANO, 40.00,2);
+        Menu menuVegan = new Menu("Menu Vegan", "NORMALE", "CuocoVegan", TipologiaEnum.VEGAN, 45.00,3);
 
         //Aggiunta di portate ai menu : Antipasto/Primo-Piatto/Secondo-Piatto/Dessert/Bevande
         //aggiunto menu Vegan/menu Vegetariano per il debug
@@ -64,7 +63,7 @@ public class Main {
         //si creano le portate e s'inseriscono
 
         // Creazione del ristorante
-        Ristorante ristorante = new Ristorante("Ristorante al taglio", 45);
+        Ristorante ristorante = new Ristorante(1,"Ristorante al taglio", 45);
         ristorante.aggiungiMenu(menuNormale);
         ristorante.aggiungiMenu(menuVegetariano);
         ristorante.aggiungiMenu(menuVegan);
@@ -72,16 +71,16 @@ public class Main {
         //TODO tutte le operazione si faranno dalla classe ristorante che è il contenitore di tutti i field
 
         // Creazione dei clienti
-        Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN, AllergieEnum.GLUTINE, menuVegan);
+        Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN, AllergieEnum.GLUTINE, menuVegan,1);
         ristorante.aggiungiPrenotazione(6,"lunedì 1 ottobre", cliente1);
 
-        Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO, AllergieEnum.NESSUNAALLERGIA, menuVegetariano);
+        Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO, AllergieEnum.NESSUNAALLERGIA, menuVegetariano,1);
         ristorante.aggiungiPrenotazione(4,"lunedì 3 ottobre", cliente2);
 
         //TODO si devono usare i metodi
         //riscrivo le prenotazione per essere calcolato del methodo "calcolaSpesa"
-//        cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
-//        cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
+        cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
+        cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
 
         //TODO cliente con la sua preferenza
         //TODO bug menu vuoto
