@@ -79,8 +79,8 @@ public class Main {
 
         //TODO si devono usare i metodi
         //riscrivo le prenotazione per essere calcolato del methodo "calcolaSpesa"
-        cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
-        cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
+//        cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
+//        cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
 
         //TODO cliente con la sua preferenza
         //TODO bug menu vuoto
