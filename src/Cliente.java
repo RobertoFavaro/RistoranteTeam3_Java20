@@ -4,8 +4,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class Cliente {
-
-
     private Integer id;
     private String nome;
     private String cognome;
@@ -23,7 +21,7 @@ public class Cliente {
         this.menuScelto = menuScelto;
         this.id = id;
     }
-// metodi getter e setter
+    // metodi getter e setter
     public Menu getMenuScelto() {
         return menuScelto;
     }

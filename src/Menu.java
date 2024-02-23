@@ -10,8 +10,6 @@ public class Menu {
     private String nomeCuoco;
     private List<Portata> portate;
     private TipologiaEnum tipologiaMenu;
-
-    // creazione di un nuovo field per il metodo costoTotale
     private Double costoTotale;
 
     public Menu(String nomeMenu, String tipoMenu, String nomeCuoco, TipologiaEnum tipologiaMenu,Double costoTotale, Integer id) {
@@ -68,13 +66,13 @@ public class Menu {
     public void setCostoTotale(Double costoTotale) {
         this.costoTotale = costoTotale;
     }
-// metodo per aggiungere una portata
+    // metodo per aggiungere una portata
     public void aggiungiPortata(Portata portata, MenuEnum enumMenu) {
         portata.setEnumMenu(enumMenu);
         portate.add(portata);
     }
 
-// metodo per stampare il menù
+    // metodo per stampare il menù
     public void stampaMenu() {
                                   //Scegli colore
         EnumColori coloreScelto = EnumColori.VERDE;

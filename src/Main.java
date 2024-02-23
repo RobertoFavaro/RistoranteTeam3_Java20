@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-//Creazione Portate : Antipasto/Primo-Piatto/Secondo-Piatto/Dessert/Bevande
+        //Creazione Portate
         Portata antipastoNormale = new AntiPasti("bruschette miste", "pomodorini al forno", "ingredienti: bruschetta, pomodoro, rosmarino", 3.50, MenuEnum.ANTIPASTI, 1, "cotto");
         Portata antipastoVegano = new AntiPasti("Insalata mista", "Insalata di stagione con olive e pomodoro", "ingredienti: insalata, olive, pomodoro", 4.50, MenuEnum.ANTIPASTI,2 , "crudo");
         Portata antipastoVegetariano = new AntiPasti("Caprese", "Mozzarella di bufala, pomodoro e basilico", "ingredienti: mozzarella di bufala, pomodoro, basilico", 6.00, MenuEnum.ANTIPASTI,3, "crudo");
@@ -33,8 +33,7 @@ public class Main {
         Menu menuVegetariano = new Menu("Menu Veg", "VEGETARIANO", "CuocoVeg", TipologiaEnum.VEGETARIANO, 40.00,2);
         Menu menuVegan = new Menu("Menu Vegan", "NORMALE", "CuocoVegan", TipologiaEnum.VEGAN, 45.00,3);
 
-        //Aggiunta di portate ai menu : Antipasto/Primo-Piatto/Secondo-Piatto/Dessert/Bevande
-        //aggiunto menu Vegan/menu Vegetariano per il debug
+        //Aggiunta delle portate ai menu'
         menuNormale.aggiungiPortata(antipastoNormale, MenuEnum.ANTIPASTI);
         menuVegan.aggiungiPortata(antipastoVegano, MenuEnum.ANTIPASTI);
         menuVegetariano.aggiungiPortata(antipastoVegetariano, MenuEnum.ANTIPASTI);
@@ -58,12 +57,10 @@ public class Main {
         //STAMPA DEL MENU'
         menuNormale.stampaMenu();
 
-
-        //si crea un menù e s'inserisce
-        //si creano le portate e s'inseriscono
-
         // Creazione del ristorante
         Ristorante ristorante = new Ristorante(1,"Ristorante al taglio", 45);
+
+        // Aggiunta dei menu a ristorante
         ristorante.aggiungiMenu(menuNormale);
         ristorante.aggiungiMenu(menuVegetariano);
         ristorante.aggiungiMenu(menuVegan);
@@ -78,14 +75,8 @@ public class Main {
         ristorante.aggiungiPrenotazione(4,"lunedì 3 ottobre", cliente2);
 
 
-        //riscrivo le prenotazione per essere calcolato del methodo "calcolaSpesa"
-
-
-
-
         //Stampa il menu che vuole il cliente
         ristorante.visualizzaMenuAndOrdina(cliente1);
-        // Debug ora dovrebbe stampare i menu che il cliente vuole xke ora ce qualcosa dentro "Menu Vegan/Menu Vegetariano"
 
         //Stampa le prenotazioni
         ristorante.stampaPrenotazioni();
@@ -102,9 +93,7 @@ public class Main {
         //stampa il calcolo totale della spesa del cliente 2
         ristorante.pagaConto(cliente2);
 
-
-
-
+        //scelta del menu per il cliente e visualizzazione del costo del menu'
         cliente1.scegliMenu(TipologiaEnum.VEGAN, ristorante.getMenuSet());
         System.out.println("Costo menu scelto: "+cliente1.costoMenuScelto());
     }

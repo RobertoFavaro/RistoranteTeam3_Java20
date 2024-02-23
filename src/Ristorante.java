@@ -20,7 +20,7 @@ public class Ristorante {
         this.portate = new ArrayList<>();
         this.postiOccupati = 0;
     }
-// metodi getter e setter
+    // metodi getter e setter
     public String getNomeRistorante() {
         return nomeRistorante;
     }
@@ -72,7 +72,7 @@ public class Ristorante {
     public Cliente getPrenotazione(String data) {
         return prenotazioni.get(data);
     }
-// metodo per aggiungere le prenotazioni
+    // metodo per aggiungere le prenotazioni
     private void aggiungiPrenotazionePrivata(String data, Cliente cliente) {
         if (prenotazioni.size() < copertiRistorante) {
             prenotazioni.put(data, cliente);
@@ -85,7 +85,7 @@ public class Ristorante {
 
 
 
-// metodo per stampare le prenotazioni
+    // metodo per stampare le prenotazioni
     public void stampaPrenotazioni() {
         System.out.println("Prenotazioni del ristorante:");
         for (Map.Entry<String, Cliente> entry : prenotazioni.entrySet()) {
@@ -95,7 +95,7 @@ public class Ristorante {
         }
     }
 
-// metodo per aggiungere un menù
+    // metodo per aggiungere un menù
     public void aggiungiMenu(Menu menuAggiunto) {
         if (menuAggiunto != null) {
             menuSet.add(menuAggiunto);
@@ -103,7 +103,7 @@ public class Ristorante {
             System.out.println("Impossibile aggiungere al menù");
         }
     }
-//metodo per rimuovere un menù
+    //metodo per rimuovere un menù
     public void rimuoviMenu(Menu menuRimosso) {
         if (menuSet.contains(menuRimosso)) {
             menuSet.remove(menuRimosso);
@@ -111,7 +111,7 @@ public class Ristorante {
             System.out.println("Impossibile rimuovere dal menù");
         }
     }
-//    metodo per visualizzare il menù
+    //    metodo per visualizzare il menù
     public void visualizzaMenuAndOrdina(Cliente cliente) {
         System.out.println("Menu " + cliente.getTipo());
         Menu menu = null;
@@ -130,7 +130,7 @@ public class Ristorante {
             System.out.println("Menu non disponibile per il tipo di cliente");
         }
     }
-//    metodo per pagare il conto
+    //    metodo per pagare il conto
     public void pagaConto(Cliente cliente) {
         double spesaTotale = 0.0;
         Menu menu = cliente.getMenuScelto();

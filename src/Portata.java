@@ -20,7 +20,7 @@ public class Portata {
         this.id = id;
     }
 
-//    metodi getter e setter
+    //    metodi getter e setter
 
     public String getIngredienti() {
         return ingredienti;
@@ -70,7 +70,7 @@ public class Portata {
         this.enumMenu = enumMenu;
     }
 
-//    metodo per stampare le portate
+    //    metodo per stampare le portate
 
     public void stampaPortate() {
         System.out.println(enumMenu + ":");
