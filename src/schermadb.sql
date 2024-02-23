@@ -119,7 +119,7 @@ CREATE TABLE primi_piatti (
     cottura VARCHAR(255)
 );
 ALTER TABLE primi_piatti ADD FOREIGN KEY (id_menu) REFERENCES menu(id_menu);
-INSERT INTO primi_piatti (id_menu, nome, descrizione, ingredienti, prezzo) VALUES
+INSERT INTO primi_piatti (id_menu, nome, descrizione, ingredienti, prezzo, cottura) VALUES
 (1,"pasta al pesto", "pasta corta con basilico pestato", "pasta e basilico",8.00, "12"),
 (2,"Pasta al pesto vegano","Pasta con pesto vegano a base di basilico e noci","pasta, basilico, noci",9.00, "10"),
 (3,"Risotto ai funghi","Risotto con funghi porcini e parmigiano","riso, funghi porcini, parmigiano",10.50, "20");
