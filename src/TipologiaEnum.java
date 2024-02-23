@@ -17,5 +17,5 @@ public enum TipologiaEnum {
         return tipoMenu;
     }
 
-    //TODO enum che sarà inserito su menu, cliente e decidete voi se anche su ristornate
+
 }

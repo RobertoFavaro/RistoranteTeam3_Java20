@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Cliente {
 
-    //TODO aggiungere il tipo
+
     private Integer id;
     private String nome;
     private String cognome;
@@ -23,7 +23,7 @@ public class Cliente {
         this.menuScelto = menuScelto;
         this.id = id;
     }
-
+// metodi getter e setter
     public Menu getMenuScelto() {
         return menuScelto;
     }
@@ -86,9 +86,7 @@ public class Cliente {
     public Boolean limitePunteggioClienti() {
         return punteggioCliente >= 100;
     }
-//    private Portata trovaPortata(String nomePortata) {
-//        return prenotazioni.get(nomePortata);
-//    }
+
 
     //Metodo per scegliere il menu usando tipologiaEnum per scegliere il tipo di menu.
     public void scegliMenu(TipologiaEnum tipoMenu, Set<Menu> menuList) {
@@ -107,6 +105,7 @@ public class Cliente {
             return 0.0;
         }
     }
+
 
 
     @Override

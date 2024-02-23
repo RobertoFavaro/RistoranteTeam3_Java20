@@ -13,6 +13,8 @@ public enum EnumColori {
         this.colore = colore;
     }
 
+
+
     public String getColore() {
         return colore;
     }

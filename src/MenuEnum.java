@@ -2,7 +2,7 @@ package src;
 
 public enum MenuEnum {
 
-    //TODO portata Enum
+
     ANTIPASTI("Antipasto"),
     PRIMIPIATTI("Primo piatto"),
     SECONDIPIATTI("Secondo piatto"),

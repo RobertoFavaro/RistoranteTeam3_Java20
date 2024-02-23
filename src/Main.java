@@ -26,7 +26,7 @@ public class Main {
         Portata bevande2 = new Bevande("vino rosso","vino ricavato da uve ", "uva" ,4.00 ,MenuEnum.BEVANDE,2,"4 acido");
         Portata bevande3 = new Bevande("Coca Cola","bibita zuccherata accompagnata da una fetta di limone e ghiaccio", "Coca Cola", 2.00,MenuEnum.BEVANDE,3, "3 acido");
 
-        //todo eliminare stampaportata
+
 
         // Creazione del menu
         Menu menuNormale = new Menu("Menu Normale", "VEGAN", "CuocoMarc", TipologiaEnum.NORMALE, 30.00, 1);
@@ -58,7 +58,7 @@ public class Main {
         //STAMPA DEL MENU'
         menuNormale.stampaMenu();
 
-        //TODO si crea un ristorante
+
         //si crea un menù e s'inserisce
         //si creano le portate e s'inseriscono
 
@@ -68,7 +68,7 @@ public class Main {
         ristorante.aggiungiMenu(menuVegetariano);
         ristorante.aggiungiMenu(menuVegan);
 
-        //TODO tutte le operazione si faranno dalla classe ristorante che è il contenitore di tutti i field
+
 
         // Creazione dei clienti
         Cliente cliente1 = new Cliente("Mario", "Ostuni", TipologiaEnum.VEGAN, AllergieEnum.GLUTINE, menuVegan,1);
@@ -77,13 +77,11 @@ public class Main {
         Cliente cliente2 = new Cliente("Federico", "Gonzales", TipologiaEnum.VEGETARIANO, AllergieEnum.NESSUNAALLERGIA, menuVegetariano,1);
         ristorante.aggiungiPrenotazione(4,"lunedì 3 ottobre", cliente2);
 
-        //TODO si devono usare i metodi
-        //riscrivo le prenotazione per essere calcolato del methodo "calcolaSpesa"
-//        cliente1.getPrenotazioni().put("lunedì 2 ottobre", antipastoVegano);
-//        cliente2.getPrenotazioni().put("lunedì 3 ottobre", primoPiattoVegano);
 
-        //TODO cliente con la sua preferenza
-        //TODO bug menu vuoto
+        //riscrivo le prenotazione per essere calcolato del methodo "calcolaSpesa"
+
+
+
 
         //Stampa il menu che vuole il cliente
         ristorante.visualizzaMenuAndOrdina(cliente1);
@@ -104,7 +102,7 @@ public class Main {
         //stampa il calcolo totale della spesa del cliente 2
         ristorante.pagaConto(cliente2);
 
-        //TODO dare la possibilità di prenotare e stampare la lista prenotazione (inserire la capienza massima del ristorante)
+
 
 
         cliente1.scegliMenu(TipologiaEnum.VEGAN, ristorante.getMenuSet());

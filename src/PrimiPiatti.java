@@ -10,7 +10,6 @@ public class PrimiPiatti extends Portata{
 
     @Override
     public void stampaPortate() {
-        //TODO sistemare le altre classi
         super.stampaPortate();
         System.out.print(this.getIngredienti()+"   ");
 

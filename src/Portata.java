@@ -1,7 +1,7 @@
 package src;
 
 public class Portata {
-    //todo questa deve essere una classe
+
     private String nome;
     private Double prezzo;
     private MenuEnum enumMenu;
@@ -9,7 +9,7 @@ public class Portata {
     private String ingredienti;
     private Integer id;
 
-    //TODO spostare qui descrizione perchè comune a tutti
+
 
     public Portata(String nome, double prezzo, MenuEnum enumMenu, String descrizione, String ingredienti, Integer id) {
         this.nome = nome;
@@ -19,6 +19,8 @@ public class Portata {
         this.ingredienti = ingredienti;
         this.id = id;
     }
+
+//    metodi getter e setter
 
     public String getIngredienti() {
         return ingredienti;
@@ -67,6 +69,8 @@ public class Portata {
     public void setEnumMenu(MenuEnum enumMenu) {
         this.enumMenu = enumMenu;
     }
+
+//    metodo per stampare le portate
 
     public void stampaPortate() {
         System.out.println(enumMenu + ":");

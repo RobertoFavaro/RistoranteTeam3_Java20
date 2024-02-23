@@ -23,6 +23,7 @@ public class Menu {
         this.costoTotale = costoTotale;
         this.id = id;
     }
+    // metodi getter e setter
 
     public String getNomeMenu() {
         return nomeMenu;
@@ -67,14 +68,13 @@ public class Menu {
     public void setCostoTotale(Double costoTotale) {
         this.costoTotale = costoTotale;
     }
-
+// metodo per aggiungere una portata
     public void aggiungiPortata(Portata portata, MenuEnum enumMenu) {
         portata.setEnumMenu(enumMenu);
         portate.add(portata);
     }
 
-    //TODO facciamo uno stampa menu colorato, facciamo un enumerato per le stampe così possiamo usare più colori
-
+// metodo per stampare il menù
     public void stampaMenu() {
                                   //Scegli colore
         EnumColori coloreScelto = EnumColori.VERDE;
